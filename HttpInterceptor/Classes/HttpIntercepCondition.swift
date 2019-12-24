@@ -1,6 +1,6 @@
 import UIKit
 
-public enum InterceptSchemeType: NSInteger {
+@objc public enum InterceptSchemeType: NSInteger {
     case https = 0
     case http
     case all // https + http
@@ -9,11 +9,10 @@ public enum InterceptSchemeType: NSInteger {
 @objc public class HttpIntercepCondition: NSObject {
     
     public typealias MatchCondition = (URLRequest) -> Bool
-
-    public var interceptSchemeType: InterceptSchemeType = .https
-    public var matchRequest: MatchCondition?
+    @objc public var interceptSchemeType: InterceptSchemeType = .https
+    @objc public var matchRequest: MatchCondition?
     
-    public init(schemeType: InterceptSchemeType, condition: MatchCondition?) {
+    @objc public init(schemeType: InterceptSchemeType, condition: MatchCondition?) {
         self.interceptSchemeType = schemeType
         super.init()
         self.matchRequest = condition

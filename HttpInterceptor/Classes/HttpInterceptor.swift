@@ -1,16 +1,26 @@
 import UIKit
 
 
-/// 作用范围:
-/// 1.URLSession 2.NSURLConnection 3.WebKit
+/// `HttpInterceptor` is a tool that intercepts HTTP requests
+/// It can intercept network requests for URLSession NSURLConnection
+/// There are also network requests in UIWebView and WKWebView
+/// But the POST request in the WKWebView cannot read the HTTPBody data
 @objc public class HttpInterceptor: NSObject {
         
-    /// 如果 nil ，全部拦截。
-    public var condition: HttpIntercepCondition? = nil
-    var delegate: HttpInterceptDelegate
+    /// If condition is nil all HTTP requests are intercepted
+    @objc public var condition: HttpIntercepCondition? = nil
+    
+    /// Various stages of network request interception, including rewriting URLRequest, rewriting URLResponse, rewriting Data, request completion ...
+    @objc public var delegate: HttpInterceptDelegate
+    
     let identifier: String
     
-    public init(condition: HttpIntercepCondition? = nil,
+    /// Create Interceptor instance
+    ///
+    /// - Parameter condition: Intercepting condition, default is nil all HTTP requests are intercepted
+    /// - Parameter delegate: `HttpInterceptDelegate` delegate
+    /// - Returns: `HttpInterceptor` Instance
+    @objc public init(condition: HttpIntercepCondition? = nil,
          delegate: HttpInterceptDelegate) {
         self.identifier = UUID().uuidString
         self.delegate = delegate
@@ -18,11 +28,13 @@ import UIKit
         self.condition = condition
     }
     
-    public func register() {
+    /// Interceptor register
+    @objc public func register() {
         HTTPInterceptorProtocol.interceptorMap[self.identifier] = self
     }
     
-    public func unregister() {
+    /// Interceptor unregister
+    @objc public func unregister() {
         HTTPInterceptorProtocol.interceptorMap[self.identifier] = nil
     }
 }

@@ -30,33 +30,25 @@ fileprivate let HTTPInterceptorProtocolKey = "HTTPInterceptorProtocolKey"
 
 extension HTTPInterceptorProtocol {
     
-    // 当前Request是否需要拦截
     class func canInterceptRequest(request: URLRequest, interceptors: [HttpInterceptor]) -> Bool {
         guard let scheme = request.url?.scheme,
               let schemeType = HttpIntercepCondition.convertSchemeType(scheme: scheme) else { return false }
-        
         for interceptor in interceptors {
-            // condition = nil， 默认全部拦截
             guard let condition = interceptor.condition else { return true }
-            
-            // 协议匹配
             if schemeType == condition.interceptSchemeType || condition.interceptSchemeType == .all {
-                // 条件匹配，需要拦截
                 if let match = condition.matchRequest, match(request) == true {
                     return true
                 }
-            } else { // 协议不匹配，直接跳过这次循环，进入下个循环。
+            } else {
                 continue
             }
         }
         return false
     }
     
-    // 通过URLRequest参数匹配 所有匹配上拦截规则的拦截者 Interceptor
     class func matchInterceptor(request: URLRequest, matchingCallback:(HttpInterceptor)->Void) {
         for (_,interceptor) in HTTPInterceptorProtocol.interceptorMap {
             guard let condition = interceptor.condition else {
-                // 不存在condition，全部拦截。
                 matchingCallback(interceptor)
                 continue
             }
@@ -101,7 +93,6 @@ extension HTTPInterceptorProtocol {
 }
 
 
-//MARK: URLSessionDataDelegate
 extension HTTPInterceptorProtocol: URLSessionDataDelegate {
     
     public func urlSession(_ session: URLSession, dataTask: URLSessionDataTask, didReceive response: URLResponse, completionHandler: @escaping (URLSession.ResponseDisposition) -> Void) {
@@ -177,7 +168,7 @@ extension URLRequest {
         return dat
     }
     
-    public func interceptHttpBodyAsJSON() -> Any? {
+     public func interceptHttpBodyAsJSON() -> Any? {
         var bodyData: Data? = nil
         if let data = interceptHttpBodyAsData() {
             bodyData = data
