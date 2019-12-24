@@ -9,7 +9,49 @@
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
+## Usage
+
+1.Register Intercept Rules
+```swift
+import HttpInterceptor
+
+let condition = HttpIntercepCondition(schemeType: .all) { (request) -> Bool in
+    guard let pathExtensionStr = request.url?.pathExtension,
+            let host = request.url?.host else {
+        return false
+    }
+    if host.contains("ss") || host.contains("timgmb") {
+        return true
+    }
+    let pathExtension = WKViewController.PathExtension(rawValue: pathExtensionStr)
+    switch pathExtension {
+    case .gif,.jpeg,.png,.svg,.jpg:
+        return true
+    case .none:
+        return false
+    }
+}
+interceptor = HttpInterceptor(condition: condition, delegate: self)
+interceptor?.register()
+```
+
+2.Implement **HttpInterceptDelegate** Delegate
+```swift
+extension WKViewController: HttpInterceptDelegate {
+    // Replace Request URL
+    func httpRequest(request: URLRequest) -> URLRequest {
+        var newRequest = request
+        newRequest.url = URL(string: "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1577182928067&di=4a039119f074e775880d33ee7589e556&imgtype=0&src=http%3A%2F%2Fimg.mp.itc.cn%2Fupload%2F20170307%2Fc1529f8154f949ef83abee83f6d5ece7.jpg")!
+        return newRequest
+    }
+    
+}
+```
+
+
 ## Requirements
+
+iOS 10+
 
 ## Installation
 

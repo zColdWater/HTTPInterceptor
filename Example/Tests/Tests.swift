@@ -6,6 +6,10 @@ class Tests: XCTestCase {
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
+        
+        // 多个拦截器
+        // 正常功能
+        
     }
     
     override func tearDown() {
