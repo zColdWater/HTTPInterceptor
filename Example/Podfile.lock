@@ -1,0 +1,16 @@
+PODS:
+  - HttpInterceptor (0.1.0)
+
+DEPENDENCIES:
+  - HttpInterceptor (from `../`)
+
+EXTERNAL SOURCES:
+  HttpInterceptor:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  HttpInterceptor: 78e80231dd4708feb4454102522a0452791bf4fe
+
+PODFILE CHECKSUM: f99bc68995574fe2efccd72eab91dc36e8ea6a8d
+
+COCOAPODS: 1.8.4

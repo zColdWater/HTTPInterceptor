@@ -1,0 +1,22 @@
+{
+  "name": "HttpInterceptor",
+  "version": "0.1.0",
+  "summary": "A short description of HttpInterceptor.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/1486297824@qq.com/HttpInterceptor",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "1486297824@qq.com": "yongpeng.zhu@nio.com"
+  },
+  "source": {
+    "git": "https://github.com/1486297824@qq.com/HttpInterceptor.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "10.0"
+  },
+  "source_files": "HttpInterceptor/Classes/**/*"
+}

@@ -1,0 +1,805 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0023416F32001108A1CE6D31F78AD79D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		0353F37B7E839778F867C4622D36F11E /* Pods-HttpInterceptor_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F794108612120E311706C3D655D911 /* Pods-HttpInterceptor_Tests-dummy.m */; };
+		0A10C24DA4EE5D56808B1EB365C29C61 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		0B4936D1E806FC107F268D547EF829DE /* NSURLSession+Interceptor.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C66BC159FF745F3036DA19374984E46 /* NSURLSession+Interceptor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		53D3A4665B38A137F1629D98F0D15F99 /* HttpInterceptor-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 675CEBB89B555F506FC84A64C1EAAA05 /* HttpInterceptor-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		65016AC28CB4B3243B0F822BD0B1B97D /* HTTPInterceptorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBC7214C1810F3F3713B0606F874C0E /* HTTPInterceptorProtocol.swift */; };
+		6FBCBB32F71C6B3C72B4F70188D8F3E1 /* HttpInterceptor-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 62DAA8E853873D1FADB3347F053B22B3 /* HttpInterceptor-dummy.m */; };
+		8186FF94685AAB6BF8D9216C29BCEECE /* HttpInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0066FAB853F86E2BF8EE9CBA1BD955C0 /* HttpInterceptor.swift */; };
+		A0BA43C3B5C4D2797D2FD1F823BC844C /* Pods-HttpInterceptor_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B0B8F81C1F339B47B289688AB5C8633 /* Pods-HttpInterceptor_Example-dummy.m */; };
+		A9BD737AF4F3B2AA6256E7ABDCDFEAD9 /* NSURLSession+Interceptor.m in Sources */ = {isa = PBXBuildFile; fileRef = B579947DC0D87660488AA5488C73EC44 /* NSURLSession+Interceptor.m */; };
+		B9E951EBC139DE866EF36996937F94AB /* Pods-HttpInterceptor_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B7865F17E8580F08F9462D4DC49824F2 /* Pods-HttpInterceptor_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BDE6D25F5AEEF75F19F7CC7E0270B5F7 /* Pods-HttpInterceptor_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 99BC8FDB61F11CFAD32771ACF869B1C5 /* Pods-HttpInterceptor_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BEF070B68E46627737015AB201F500B5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		C50C100DD5C7B51E273839E52386A8FB /* HttpIntercepCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F708235AFB0A7D443BD90E9436FC01C /* HttpIntercepCondition.swift */; };
+		D2B0AA024B5DB1E63BD688CDAAC8F2D5 /* HttpURLSessionChallengeSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0596C3AFD8026BB2CB56EB1097C2934C /* HttpURLSessionChallengeSender.swift */; };
+		DD969E5A0BC7C10914C25BF4F3E2FC99 /* HttpInterceptDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14936F0ED9D7E0F5A830417413C7D51B /* HttpInterceptDelegate.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		070B7E72F68162930469DE894A6262B7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5B94A31C60C78765199369FF8FC16A11;
+			remoteInfo = "Pods-HttpInterceptor_Example";
+		};
+		3B633403F15614630C426091E0974203 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9F2AAE8D2ADAC0A871B6DF3B5E345EC8;
+			remoteInfo = HttpInterceptor;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0066FAB853F86E2BF8EE9CBA1BD955C0 /* HttpInterceptor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HttpInterceptor.swift; path = HttpInterceptor/Classes/HttpInterceptor.swift; sourceTree = "<group>"; };
+		02718DB23AE6533084F337DC6C2CE1E7 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		0596C3AFD8026BB2CB56EB1097C2934C /* HttpURLSessionChallengeSender.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HttpURLSessionChallengeSender.swift; path = HttpInterceptor/Classes/HttpURLSessionChallengeSender.swift; sourceTree = "<group>"; };
+		136858EFCAA3C8614C77925D847BCA49 /* HttpInterceptor.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = HttpInterceptor.modulemap; sourceTree = "<group>"; };
+		14936F0ED9D7E0F5A830417413C7D51B /* HttpInterceptDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HttpInterceptDelegate.swift; path = HttpInterceptor/Classes/HttpInterceptDelegate.swift; sourceTree = "<group>"; };
+		185A09B1E1CFB78185EB65CED01C8F26 /* Pods-HttpInterceptor_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-HttpInterceptor_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
+		194B9BD657A8ADDD92A9DB891E966A6E /* Pods_HttpInterceptor_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_HttpInterceptor_Example.framework; path = "Pods-HttpInterceptor_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2345D2C36F610B6EEAC54EF23E0D6671 /* HttpInterceptor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = HttpInterceptor.framework; path = HttpInterceptor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		4151373C72C25E65CD4625CFA0C24543 /* Pods-HttpInterceptor_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-HttpInterceptor_Example.modulemap"; sourceTree = "<group>"; };
+		49AF240A577749930369345E750ACA82 /* HttpInterceptor.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = HttpInterceptor.xcconfig; sourceTree = "<group>"; };
+		4C66BC159FF745F3036DA19374984E46 /* NSURLSession+Interceptor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSURLSession+Interceptor.h"; path = "HttpInterceptor/Classes/NSURLSession+Interceptor.h"; sourceTree = "<group>"; };
+		4F5F992635A3C8AB7D98E1D11B8F42A4 /* Pods-HttpInterceptor_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-HttpInterceptor_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		58B5A11A2D695E0779013411CB0C77EE /* Pods-HttpInterceptor_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-HttpInterceptor_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		5EE31AB7D5EF2B7600B9FA8EE2198BC5 /* Pods-HttpInterceptor_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-HttpInterceptor_Example-Info.plist"; sourceTree = "<group>"; };
+		62DAA8E853873D1FADB3347F053B22B3 /* HttpInterceptor-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "HttpInterceptor-dummy.m"; sourceTree = "<group>"; };
+		675CEBB89B555F506FC84A64C1EAAA05 /* HttpInterceptor-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "HttpInterceptor-umbrella.h"; sourceTree = "<group>"; };
+		69BCA0284AEA6DBF3992F195A69DECB1 /* Pods-HttpInterceptor_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-HttpInterceptor_Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		6ED820321FAECC3B9993D8F139FE8B75 /* HttpInterceptor.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = HttpInterceptor.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		6F708235AFB0A7D443BD90E9436FC01C /* HttpIntercepCondition.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HttpIntercepCondition.swift; path = HttpInterceptor/Classes/HttpIntercepCondition.swift; sourceTree = "<group>"; };
+		8B0B8F81C1F339B47B289688AB5C8633 /* Pods-HttpInterceptor_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-HttpInterceptor_Example-dummy.m"; sourceTree = "<group>"; };
+		9353D619A7D1C168CBA3A67D875E35A0 /* Pods_HttpInterceptor_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_HttpInterceptor_Tests.framework; path = "Pods-HttpInterceptor_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		93F794108612120E311706C3D655D911 /* Pods-HttpInterceptor_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-HttpInterceptor_Tests-dummy.m"; sourceTree = "<group>"; };
+		99BC8FDB61F11CFAD32771ACF869B1C5 /* Pods-HttpInterceptor_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-HttpInterceptor_Tests-umbrella.h"; sourceTree = "<group>"; };
+		9A152F3A32D3E4F023B6E43FC61B634C /* Pods-HttpInterceptor_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-HttpInterceptor_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		B1F8D3C455AEEDEDC15AACA91BBE9C55 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		B579947DC0D87660488AA5488C73EC44 /* NSURLSession+Interceptor.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSURLSession+Interceptor.m"; path = "HttpInterceptor/Classes/NSURLSession+Interceptor.m"; sourceTree = "<group>"; };
+		B6E0F60D4CE99BE97B1C63724A3BC5BA /* Pods-HttpInterceptor_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-HttpInterceptor_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		B7865F17E8580F08F9462D4DC49824F2 /* Pods-HttpInterceptor_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-HttpInterceptor_Example-umbrella.h"; sourceTree = "<group>"; };
+		BDC822615085CB8CB242C1AE52CA3640 /* Pods-HttpInterceptor_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-HttpInterceptor_Example.release.xcconfig"; sourceTree = "<group>"; };
+		BFBC7214C1810F3F3713B0606F874C0E /* HTTPInterceptorProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HTTPInterceptorProtocol.swift; path = HttpInterceptor/Classes/HTTPInterceptorProtocol.swift; sourceTree = "<group>"; };
+		D5D927A7BD0A107A0439C0D37ED68555 /* Pods-HttpInterceptor_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-HttpInterceptor_Example-frameworks.sh"; sourceTree = "<group>"; };
+		D918E40AB3681BB4CB99F04AC18B4C2E /* Pods-HttpInterceptor_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-HttpInterceptor_Tests-Info.plist"; sourceTree = "<group>"; };
+		E04B150F057AC96EBDE1F74138D7DBC6 /* Pods-HttpInterceptor_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-HttpInterceptor_Tests.modulemap"; sourceTree = "<group>"; };
+		E8CC565DBC083537DEE1FCF75C67B829 /* Pods-HttpInterceptor_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-HttpInterceptor_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		F062D496E6794C0BFE7C05108861FF88 /* HttpInterceptor-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "HttpInterceptor-Info.plist"; sourceTree = "<group>"; };
+		F3FC1A7772C144F3E380FC5D718A785C /* HttpInterceptor-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "HttpInterceptor-prefix.pch"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1A9E3FC1634D12048C4ECC7E2AA1AD06 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BEF070B68E46627737015AB201F500B5 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D14A68703746017D36CC22427506A14B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0023416F32001108A1CE6D31F78AD79D /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E7BC3DD614E9996ADE169346B23B379C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0A10C24DA4EE5D56808B1EB365C29C61 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		118E53FB0AAB6056840A468550B87009 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2345D2C36F610B6EEAC54EF23E0D6671 /* HttpInterceptor.framework */,
+				194B9BD657A8ADDD92A9DB891E966A6E /* Pods_HttpInterceptor_Example.framework */,
+				9353D619A7D1C168CBA3A67D875E35A0 /* Pods_HttpInterceptor_Tests.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		869BE9AB2F05BD69C4BDFDE1D2F9551B /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				136858EFCAA3C8614C77925D847BCA49 /* HttpInterceptor.modulemap */,
+				49AF240A577749930369345E750ACA82 /* HttpInterceptor.xcconfig */,
+				62DAA8E853873D1FADB3347F053B22B3 /* HttpInterceptor-dummy.m */,
+				F062D496E6794C0BFE7C05108861FF88 /* HttpInterceptor-Info.plist */,
+				F3FC1A7772C144F3E380FC5D718A785C /* HttpInterceptor-prefix.pch */,
+				675CEBB89B555F506FC84A64C1EAAA05 /* HttpInterceptor-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/HttpInterceptor";
+			sourceTree = "<group>";
+		};
+		9C22AA99B3478B103330D99BB45535BE /* Pods-HttpInterceptor_Tests */ = {
+			isa = PBXGroup;
+			children = (
+				E04B150F057AC96EBDE1F74138D7DBC6 /* Pods-HttpInterceptor_Tests.modulemap */,
+				E8CC565DBC083537DEE1FCF75C67B829 /* Pods-HttpInterceptor_Tests-acknowledgements.markdown */,
+				185A09B1E1CFB78185EB65CED01C8F26 /* Pods-HttpInterceptor_Tests-acknowledgements.plist */,
+				93F794108612120E311706C3D655D911 /* Pods-HttpInterceptor_Tests-dummy.m */,
+				D918E40AB3681BB4CB99F04AC18B4C2E /* Pods-HttpInterceptor_Tests-Info.plist */,
+				99BC8FDB61F11CFAD32771ACF869B1C5 /* Pods-HttpInterceptor_Tests-umbrella.h */,
+				58B5A11A2D695E0779013411CB0C77EE /* Pods-HttpInterceptor_Tests.debug.xcconfig */,
+				B6E0F60D4CE99BE97B1C63724A3BC5BA /* Pods-HttpInterceptor_Tests.release.xcconfig */,
+			);
+			name = "Pods-HttpInterceptor_Tests";
+			path = "Target Support Files/Pods-HttpInterceptor_Tests";
+			sourceTree = "<group>";
+		};
+		BF1416C28C31F1EF048D4CE4A8129B6A /* HttpInterceptor */ = {
+			isa = PBXGroup;
+			children = (
+				6F708235AFB0A7D443BD90E9436FC01C /* HttpIntercepCondition.swift */,
+				14936F0ED9D7E0F5A830417413C7D51B /* HttpInterceptDelegate.swift */,
+				0066FAB853F86E2BF8EE9CBA1BD955C0 /* HttpInterceptor.swift */,
+				BFBC7214C1810F3F3713B0606F874C0E /* HTTPInterceptorProtocol.swift */,
+				0596C3AFD8026BB2CB56EB1097C2934C /* HttpURLSessionChallengeSender.swift */,
+				4C66BC159FF745F3036DA19374984E46 /* NSURLSession+Interceptor.h */,
+				B579947DC0D87660488AA5488C73EC44 /* NSURLSession+Interceptor.m */,
+				DC0C652488913D56D73ABC70497C98FF /* Pod */,
+				869BE9AB2F05BD69C4BDFDE1D2F9551B /* Support Files */,
+			);
+			name = HttpInterceptor;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		C0834CEBB1379A84116EF29F93051C60 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		C7BD9FEF3671BE3480C3F894A09B73CA /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BF1416C28C31F1EF048D4CE4A8129B6A /* HttpInterceptor */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				C7BD9FEF3671BE3480C3F894A09B73CA /* Development Pods */,
+				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
+				118E53FB0AAB6056840A468550B87009 /* Products */,
+				D389ED28FDB51FAFF060791C7D18332B /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C0834CEBB1379A84116EF29F93051C60 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D389ED28FDB51FAFF060791C7D18332B /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				DCE5E2E81A130BD69CD26E4CE1AD96E5 /* Pods-HttpInterceptor_Example */,
+				9C22AA99B3478B103330D99BB45535BE /* Pods-HttpInterceptor_Tests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		DC0C652488913D56D73ABC70497C98FF /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				6ED820321FAECC3B9993D8F139FE8B75 /* HttpInterceptor.podspec */,
+				02718DB23AE6533084F337DC6C2CE1E7 /* LICENSE */,
+				B1F8D3C455AEEDEDC15AACA91BBE9C55 /* README.md */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
+		DCE5E2E81A130BD69CD26E4CE1AD96E5 /* Pods-HttpInterceptor_Example */ = {
+			isa = PBXGroup;
+			children = (
+				4151373C72C25E65CD4625CFA0C24543 /* Pods-HttpInterceptor_Example.modulemap */,
+				9A152F3A32D3E4F023B6E43FC61B634C /* Pods-HttpInterceptor_Example-acknowledgements.markdown */,
+				69BCA0284AEA6DBF3992F195A69DECB1 /* Pods-HttpInterceptor_Example-acknowledgements.plist */,
+				8B0B8F81C1F339B47B289688AB5C8633 /* Pods-HttpInterceptor_Example-dummy.m */,
+				D5D927A7BD0A107A0439C0D37ED68555 /* Pods-HttpInterceptor_Example-frameworks.sh */,
+				5EE31AB7D5EF2B7600B9FA8EE2198BC5 /* Pods-HttpInterceptor_Example-Info.plist */,
+				B7865F17E8580F08F9462D4DC49824F2 /* Pods-HttpInterceptor_Example-umbrella.h */,
+				4F5F992635A3C8AB7D98E1D11B8F42A4 /* Pods-HttpInterceptor_Example.debug.xcconfig */,
+				BDC822615085CB8CB242C1AE52CA3640 /* Pods-HttpInterceptor_Example.release.xcconfig */,
+			);
+			name = "Pods-HttpInterceptor_Example";
+			path = "Target Support Files/Pods-HttpInterceptor_Example";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		38FEBB0C4834F1547ECBBDDEE36E80C1 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B9E951EBC139DE866EF36996937F94AB /* Pods-HttpInterceptor_Example-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B3091DFAEFF647B34988A1EBC7B39C0C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BDE6D25F5AEEF75F19F7CC7E0270B5F7 /* Pods-HttpInterceptor_Tests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EA1BD41A7338426CC45524B3B9944180 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				53D3A4665B38A137F1629D98F0D15F99 /* HttpInterceptor-umbrella.h in Headers */,
+				0B4936D1E806FC107F268D547EF829DE /* NSURLSession+Interceptor.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		22740B68A23D5620CC0EBF0C56F35116 /* Pods-HttpInterceptor_Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C072A96C139FA9E984883BF577FEF825 /* Build configuration list for PBXNativeTarget "Pods-HttpInterceptor_Tests" */;
+			buildPhases = (
+				B3091DFAEFF647B34988A1EBC7B39C0C /* Headers */,
+				15F98590391FB33A9FB8A7B6AE3E0CDE /* Sources */,
+				E7BC3DD614E9996ADE169346B23B379C /* Frameworks */,
+				B2908AB8BF849E15C0A158A3CA5B5465 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B99C1EB6AB39575E6BC630AC4DDCC7B2 /* PBXTargetDependency */,
+			);
+			name = "Pods-HttpInterceptor_Tests";
+			productName = "Pods-HttpInterceptor_Tests";
+			productReference = 9353D619A7D1C168CBA3A67D875E35A0 /* Pods_HttpInterceptor_Tests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		5B94A31C60C78765199369FF8FC16A11 /* Pods-HttpInterceptor_Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 236434150F014EFEFB49DE7F4E322C81 /* Build configuration list for PBXNativeTarget "Pods-HttpInterceptor_Example" */;
+			buildPhases = (
+				38FEBB0C4834F1547ECBBDDEE36E80C1 /* Headers */,
+				5A8ED7F1C17B1F17FF56AFCACF27E32A /* Sources */,
+				1A9E3FC1634D12048C4ECC7E2AA1AD06 /* Frameworks */,
+				3D2183513303B24243A92C2C667A70CF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7A7238AFF8F34A0675771A698D1875A4 /* PBXTargetDependency */,
+			);
+			name = "Pods-HttpInterceptor_Example";
+			productName = "Pods-HttpInterceptor_Example";
+			productReference = 194B9BD657A8ADDD92A9DB891E966A6E /* Pods_HttpInterceptor_Example.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		9F2AAE8D2ADAC0A871B6DF3B5E345EC8 /* HttpInterceptor */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8BCBBDF255B68DAC3ED88512E089FF47 /* Build configuration list for PBXNativeTarget "HttpInterceptor" */;
+			buildPhases = (
+				EA1BD41A7338426CC45524B3B9944180 /* Headers */,
+				E9E27A00D7A326B155B0B489EF805FA0 /* Sources */,
+				D14A68703746017D36CC22427506A14B /* Frameworks */,
+				6AA1EDB28DA03EC94E506298BC38CBBD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HttpInterceptor;
+			productName = HttpInterceptor;
+			productReference = 2345D2C36F610B6EEAC54EF23E0D6671 /* HttpInterceptor.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
+			};
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = 118E53FB0AAB6056840A468550B87009 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9F2AAE8D2ADAC0A871B6DF3B5E345EC8 /* HttpInterceptor */,
+				5B94A31C60C78765199369FF8FC16A11 /* Pods-HttpInterceptor_Example */,
+				22740B68A23D5620CC0EBF0C56F35116 /* Pods-HttpInterceptor_Tests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3D2183513303B24243A92C2C667A70CF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6AA1EDB28DA03EC94E506298BC38CBBD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B2908AB8BF849E15C0A158A3CA5B5465 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		15F98590391FB33A9FB8A7B6AE3E0CDE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0353F37B7E839778F867C4622D36F11E /* Pods-HttpInterceptor_Tests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5A8ED7F1C17B1F17FF56AFCACF27E32A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A0BA43C3B5C4D2797D2FD1F823BC844C /* Pods-HttpInterceptor_Example-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E9E27A00D7A326B155B0B489EF805FA0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C50C100DD5C7B51E273839E52386A8FB /* HttpIntercepCondition.swift in Sources */,
+				DD969E5A0BC7C10914C25BF4F3E2FC99 /* HttpInterceptDelegate.swift in Sources */,
+				6FBCBB32F71C6B3C72B4F70188D8F3E1 /* HttpInterceptor-dummy.m in Sources */,
+				8186FF94685AAB6BF8D9216C29BCEECE /* HttpInterceptor.swift in Sources */,
+				65016AC28CB4B3243B0F822BD0B1B97D /* HTTPInterceptorProtocol.swift in Sources */,
+				D2B0AA024B5DB1E63BD688CDAAC8F2D5 /* HttpURLSessionChallengeSender.swift in Sources */,
+				A9BD737AF4F3B2AA6256E7ABDCDFEAD9 /* NSURLSession+Interceptor.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7A7238AFF8F34A0675771A698D1875A4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = HttpInterceptor;
+			target = 9F2AAE8D2ADAC0A871B6DF3B5E345EC8 /* HttpInterceptor */;
+			targetProxy = 3B633403F15614630C426091E0974203 /* PBXContainerItemProxy */;
+		};
+		B99C1EB6AB39575E6BC630AC4DDCC7B2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-HttpInterceptor_Example";
+			target = 5B94A31C60C78765199369FF8FC16A11 /* Pods-HttpInterceptor_Example */;
+			targetProxy = 070B7E72F68162930469DE894A6262B7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		08078B2F1968AE6D8F71B77AE70E7C07 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BDC822615085CB8CB242C1AE52CA3640 /* Pods-HttpInterceptor_Example.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-HttpInterceptor_Example/Pods-HttpInterceptor_Example-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-HttpInterceptor_Example/Pods-HttpInterceptor_Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		0E3F49318B1DC917FD2523066E041FD5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B6E0F60D4CE99BE97B1C63724A3BC5BA /* Pods-HttpInterceptor_Tests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-HttpInterceptor_Tests/Pods-HttpInterceptor_Tests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-HttpInterceptor_Tests/Pods-HttpInterceptor_Tests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		257497152829C177993B5EC99C1D227A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		617CE14BA0A23CE28F83538E995382B1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 49AF240A577749930369345E750ACA82 /* HttpInterceptor.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/HttpInterceptor/HttpInterceptor-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/HttpInterceptor/HttpInterceptor-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/HttpInterceptor/HttpInterceptor.modulemap";
+				PRODUCT_MODULE_NAME = HttpInterceptor;
+				PRODUCT_NAME = HttpInterceptor;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		8C8D1A7C19C7B2B2C9B46FBCADA67014 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 58B5A11A2D695E0779013411CB0C77EE /* Pods-HttpInterceptor_Tests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-HttpInterceptor_Tests/Pods-HttpInterceptor_Tests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-HttpInterceptor_Tests/Pods-HttpInterceptor_Tests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		D155DB298ECC114E6CABD8CED5059783 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 49AF240A577749930369345E750ACA82 /* HttpInterceptor.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/HttpInterceptor/HttpInterceptor-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/HttpInterceptor/HttpInterceptor-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/HttpInterceptor/HttpInterceptor.modulemap";
+				PRODUCT_MODULE_NAME = HttpInterceptor;
+				PRODUCT_NAME = HttpInterceptor;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		DD8F832993327D1DD8046C3CBCBD97CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		EA70029F5F4B94665162FC41665E49E5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4F5F992635A3C8AB7D98E1D11B8F42A4 /* Pods-HttpInterceptor_Example.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-HttpInterceptor_Example/Pods-HttpInterceptor_Example-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-HttpInterceptor_Example/Pods-HttpInterceptor_Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		236434150F014EFEFB49DE7F4E322C81 /* Build configuration list for PBXNativeTarget "Pods-HttpInterceptor_Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EA70029F5F4B94665162FC41665E49E5 /* Debug */,
+				08078B2F1968AE6D8F71B77AE70E7C07 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DD8F832993327D1DD8046C3CBCBD97CD /* Debug */,
+				257497152829C177993B5EC99C1D227A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8BCBBDF255B68DAC3ED88512E089FF47 /* Build configuration list for PBXNativeTarget "HttpInterceptor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D155DB298ECC114E6CABD8CED5059783 /* Debug */,
+				617CE14BA0A23CE28F83538E995382B1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C072A96C139FA9E984883BF577FEF825 /* Build configuration list for PBXNativeTarget "Pods-HttpInterceptor_Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8C8D1A7C19C7B2B2C9B46FBCADA67014 /* Debug */,
+				0E3F49318B1DC917FD2523066E041FD5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+}

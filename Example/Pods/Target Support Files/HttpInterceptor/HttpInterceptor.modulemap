@@ -1,0 +1,6 @@
+framework module HttpInterceptor {
+  umbrella header "HttpInterceptor-umbrella.h"
+
+  export *
+  module * { export * }
+}
