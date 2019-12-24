@@ -1,6 +1,23 @@
 import UIKit
 
-enum DemoType: Int {
+enum DemoSectionType: Int {
+    case webview = 0
+    case urlsession
+    case urlconnection
+    
+    func getName() -> String {
+        switch self {
+        case .webview:
+            return "WebView"
+        case .urlsession:
+            return "URLSession"
+        case .urlconnection:
+            return "NSURLConnection"
+        }
+    }
+}
+
+enum DemoRowType: Int {
     
     static var identifier: String { return "interceptor-demo" }
     case wkwebview = 0
@@ -57,15 +74,18 @@ enum DemoType: Int {
         }
     }
     
-    static func getDemoType(index: Int) -> DemoType? {
-        return DemoType(rawValue: index)
+    static func getDemoType(index: Int) -> DemoRowType? {
+        return DemoRowType(rawValue: index)
     }
 }
 
 class ViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
-    var dataSource: [DemoType] = [.uiwebview,.wkwebview,.urlsession,.urlconnection]
+
+    var dataSource: [DemoSectionType: [DemoRowType]] = [.webview: [.uiwebview,.wkwebview],
+                                                        .urlsession: [.urlsession],
+                                                        .urlconnection: [.urlconnection]]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -73,30 +93,54 @@ class ViewController: UIViewController {
 
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: DemoType.identifier)
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: DemoRowType.identifier)
     }
 }
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
+    
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dataSource.count
     }
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let type = DemoType.getDemoType(index: indexPath.row)
-        type?.todo(viewController: self)
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        guard let type = DemoSectionType(rawValue: section) else {
+            assertionFailure()
+            return ""
+        }
+        return type.getName()
     }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 44
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        guard let type = DemoSectionType(rawValue: section) else { return 0 }
+        switch type {
+            case .webview:
+                return dataSource[.webview]!.count
+            case .urlsession:
+                return dataSource[.urlsession]!.count
+            case .urlconnection:
+                return dataSource[.urlconnection]!.count
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let type = DemoSectionType(rawValue: indexPath.section) else { return assertionFailure() }
+        dataSource[type]?[indexPath.row].todo(viewController: self)
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let type = DemoType.getDemoType(index: indexPath.row)
+        guard let type = DemoSectionType(rawValue: indexPath.section) else { assertionFailure(); return UITableViewCell() }
+        
 //        let cell = tableView.dequeueReusableCell(withIdentifier: DemoType.identifier)
-        let cell = UITableViewCell(style: .subtitle, reuseIdentifier: DemoType.identifier)
-        cell.textLabel?.text = type?.getName()
-        cell.detailTextLabel?.text = type?.getDescription()
+        let cell = UITableViewCell(style: .subtitle, reuseIdentifier: DemoRowType.identifier)
+        cell.textLabel?.text = dataSource[type]?[indexPath.row].getName()
+        cell.detailTextLabel?.text = dataSource[type]?[indexPath.row].getDescription()
         cell.detailTextLabel?.numberOfLines = 0
         cell.selectionStyle = .none
-        
         return cell
     }
 }

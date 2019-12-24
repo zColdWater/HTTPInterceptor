@@ -68,7 +68,6 @@ extension UIWebViewController: HttpInterceptDelegate {
     
     func httpRequest(request: URLRequest) -> URLRequest {
         var newRequest = request
-        newRequest.addValue("suibian", forHTTPHeaderField: "suibian")
         newRequest.url = URL(string: "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1577182928067&di=4a039119f074e775880d33ee7589e556&imgtype=0&src=http%3A%2F%2Fimg.mp.itc.cn%2Fupload%2F20170307%2Fc1529f8154f949ef83abee83f6d5ece7.jpg")!
         return newRequest
     }
