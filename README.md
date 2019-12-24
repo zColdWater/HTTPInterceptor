@@ -22,7 +22,7 @@ pod 'HttpInterceptor'
 
 ## Author
 
-1486297824@qq.com, yongpeng.zhu@nio.com
+zColdWater
 
 ## License
 
