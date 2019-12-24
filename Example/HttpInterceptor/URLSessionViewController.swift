@@ -24,10 +24,12 @@ class URLSessionViewController: UIViewController {
     var httpIntercepingMetrics: String? = nil
     var httpIntercepingStatusCode: String? = nil
 
-    var requestType: RequestType = .urlsession
+    var requestType: RequestType = .urlsession_get
     
     enum RequestType {
-        case urlsession
+        case urlsession_get
+        case urlsession_post
+        case urlsession_download
         case nsurlconnection
     }
     
@@ -45,20 +47,20 @@ class URLSessionViewController: UIViewController {
         case .nsurlconnection:
             title = "NSURLConnection"
             connectionRequest()
-        case .urlsession:
-            title = "URLSession"
-            sessionRequest()
+        case .urlsession_get:
+            title = "URLSession GET"
+            sessionGETRequest()
+        case .urlsession_post:
+            title = "URLSession POST"
+            sessionPOSTRequest()
+        case .urlsession_download:
+            title = "URLSession DOWNLOAD"
+            sessionDownloadRequest()
         }
     }
     
-    deinit {
-        print("URLSessionViewController deinit")
-        interceptor?.unregister()
-        session?.finishTasksAndInvalidate()
-    }
-    
-    /// `URLSession` start request
-    func sessionRequest() {
+    /// `URLSession` start `get`request
+    func sessionGETRequest() {
         let configuration = URLSessionConfiguration.default
         session = URLSession(configuration: configuration, delegate: sessionManager, delegateQueue: nil)
         var request = URLRequest(url: URL(string: "https://httpbin.org/get?name=henry&gender=male")!)
@@ -66,6 +68,49 @@ class URLSessionViewController: UIViewController {
         request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
         let task = session!.dataTask(with: request)
         
+        parseRequest(request)
+        task.resume()
+    }
+    
+    /// `URLSession` start `post`request
+    func sessionPOSTRequest() {
+        let configuration = URLSessionConfiguration.default
+        session = URLSession(configuration: configuration, delegate: sessionManager, delegateQueue: nil)
+        var request = URLRequest(url: URL(string: "https://httpbin.org/get?name=henry&gender=male")!)
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        let parameterDictionary: [String: Any] = ["name":"henry","subs":["var","let","some","option","undefine"]]
+        request.httpBody = try! JSONSerialization.data(withJSONObject: parameterDictionary, options: [.fragmentsAllowed,.prettyPrinted])
+        let task = session!.dataTask(with: request)
+        
+        parseRequest(request)
+        task.resume()
+    }
+    
+    /// `URLSession` start `download`request
+    func sessionDownloadRequest() {
+        let configuration = URLSessionConfiguration.default
+        session = URLSession(configuration: configuration, delegate: sessionManager, delegateQueue: nil)
+        let request = URLRequest(url: URL(string: "http://47.99.237.180:2088/files/628cae9fb56964c7c158ccd0a5bf83ff")!)
+        let task = session!.downloadTask(with: request)
+        
+        parseRequest(request)
+        task.resume()
+    }
+    
+    /// `NSURLConnection` start request
+    func connectionRequest() {
+        var request = URLRequest(url: URL(string: "https://httpbin.org/post")!)
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        let parameterDictionary: [String: Any] = ["name":"henry","subs":["var","let","some","option","undefine"]]
+        request.httpBody = try! JSONSerialization.data(withJSONObject: parameterDictionary, options: [.fragmentsAllowed,.prettyPrinted])
+        
+        parseRequest(request)
+        NSURLConnection(request: request, delegate: self, startImmediately: true)
+    }
+    
+    func parseRequest(_ request: URLRequest) {
         if let urlStr = request.url?.absoluteString {
             self.httpRequestURL = urlStr
         }
@@ -98,38 +143,13 @@ class URLSessionViewController: UIViewController {
         sessionManager.didReviceResponse = { [weak self] (headerStr: String?) in
             self?.httpResponseHeader = headerStr
         }
-        
-        task.resume()
     }
     
-    /// `NSURLConnection` start request
-    func connectionRequest() {
-        var request = URLRequest(url: URL(string: "https://httpbin.org/post")!)
-        request.httpMethod = "POST"
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        let parameterDictionary: [String: Any] = ["name":"henry","subs":["var","let","some","option","undefine"]]
-        request.httpBody = try! JSONSerialization.data(withJSONObject: parameterDictionary, options: [.fragmentsAllowed,.prettyPrinted])
-        
-        if let urlStr = request.url?.absoluteString {
-            self.httpRequestURL = urlStr
-        }
-        
-        if let header = request.allHTTPHeaderFields {
-            let jsonData = try! JSONSerialization.data(withJSONObject: header, options: [.prettyPrinted,.fragmentsAllowed])
-            let headerStr = String.init(data: jsonData, encoding: String.Encoding.utf8)
-            self.requestHeader = headerStr
-        }
-        
-        if let body = request.httpBody {
-            let bodyObject = try! JSONSerialization.jsonObject(with: body, options: [.allowFragments, .mutableContainers])
-            let jsonData = try! JSONSerialization.data(withJSONObject: bodyObject, options: [.prettyPrinted,.fragmentsAllowed])
-            let jsonString = String.init(data: jsonData, encoding: String.Encoding.utf8)
-            self.httpRequestBody = jsonString
-        }
-        
-        self.httpRequestQueryString = request.url?.query
-        
-        NSURLConnection(request: request, delegate: self, startImmediately: true)
+    
+    deinit {
+        print("URLSessionViewController deinit")
+        interceptor?.unregister()
+        session?.finishTasksAndInvalidate()
     }
 
 }
