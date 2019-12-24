@@ -11,7 +11,7 @@ import UIKit
     @objc public var condition: HttpIntercepCondition? = nil
     
     /// Various stages of network request interception, including rewriting URLRequest, rewriting URLResponse, rewriting Data, request completion ...
-    @objc public var delegate: HttpInterceptDelegate
+    @objc public weak var delegate: HttpInterceptDelegate?
     
     let identifier: String
     
@@ -21,7 +21,7 @@ import UIKit
     /// - Parameter delegate: `HttpInterceptDelegate` delegate
     /// - Returns: `HttpInterceptor` Instance
     @objc public init(condition: HttpIntercepCondition? = nil,
-         delegate: HttpInterceptDelegate) {
+         delegate: HttpInterceptDelegate? = nil) {
         self.identifier = UUID().uuidString
         self.delegate = delegate
         super.init()

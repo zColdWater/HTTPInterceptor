@@ -24,13 +24,13 @@ enum DemoType: Int {
     func getDescription() -> String {
         switch self {
         case .uiwebview:
-            return "拦截UIWebView的所有HTTP请求"
+            return "拦截UIWebView中所有的 png, svg, jpeg, gif 结尾的链接，替换成自定义资源链接。 测试链接 "
         case .wkwebview:
-            return "拦截WKWebView的所有HTTP请求，POST请求的HTTPBody目前无法获得。"
+            return "拦截WKWebView中所有的 png, svg, jpeg, gif 结尾的链接，替换成自定义资源链接。"
         case .urlconnection:
-            return "拦截URLConnection的所有网络请求"
+            return "URLConnection的所有网络请求"
         case .urlsession:
-            return "拦截URLSession的所有网络请求"
+            return "URLSession的所有网络请求"
         }
     }
     
@@ -89,10 +89,13 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let type = DemoType.getDemoType(index: indexPath.row)
-        let cell = tableView.dequeueReusableCell(withIdentifier: DemoType.identifier)
-        cell?.textLabel?.text = type?.getName()
-        cell?.detailTextLabel?.text = type?.getDescription()
-        cell?.selectionStyle = .none
-        return cell!
+//        let cell = tableView.dequeueReusableCell(withIdentifier: DemoType.identifier)
+        let cell = UITableViewCell(style: .subtitle, reuseIdentifier: DemoType.identifier)
+        cell.textLabel?.text = type?.getName()
+        cell.detailTextLabel?.text = type?.getDescription()
+        cell.detailTextLabel?.numberOfLines = 0
+        cell.selectionStyle = .none
+        
+        return cell
     }
 }

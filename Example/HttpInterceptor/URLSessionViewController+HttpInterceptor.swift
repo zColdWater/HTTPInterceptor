@@ -4,16 +4,11 @@ import HttpInterceptor
 extension URLSessionViewController {
     
     func registerInterceptor() {
-        // 拦截条件，交给外层处理。
         let condition = HttpIntercepCondition(schemeType: .all) { (request) -> Bool in
             return true
         }
-        // 创建拦截器
-        let interceptor = HttpInterceptor(condition: condition, delegate: self)
-        // 立即生效
-        interceptor.register()
-        // 取消拦截
-        // interceptor.unregister()
+        interceptor = HttpInterceptor(condition: condition, delegate: self)
+        interceptor?.register()
     }
     
     func interceptingHttpRequestDescription(request: URLRequest) -> String {

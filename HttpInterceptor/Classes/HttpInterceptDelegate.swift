@@ -27,4 +27,3 @@ import UIKit
     @objc optional func httpRequest(request: URLRequest, didCompleteWithError error: Error?)
 
 }
-

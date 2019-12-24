@@ -82,7 +82,7 @@ extension HTTPInterceptorProtocol {
     class func handleRequest(request: URLRequest) -> URLRequest {
         var finalRequest: URLRequest = request
         HTTPInterceptorProtocol.matchInterceptor(request: request) { interceptor in
-            if let r = interceptor.delegate.httpRequest?(request: request) {
+            if let r = interceptor.delegate?.httpRequest?(request: request) {
                 finalRequest = r
             }
         }
@@ -99,7 +99,7 @@ extension HTTPInterceptorProtocol: URLSessionDataDelegate {
         // 如果有多个拦截器，同时拦截了这个response，返回最后设置拦截response。
         var newResponse = response
         HTTPInterceptorProtocol.matchInterceptor(request: self.request) { interceptor in
-            if let httpResponse = interceptor.delegate.httpRequest?(response: response) {
+            if let httpResponse = interceptor.delegate?.httpRequest?(response: response) {
                 newResponse = httpResponse
             }
         }
@@ -115,7 +115,7 @@ extension HTTPInterceptorProtocol: URLSessionDataDelegate {
     public func urlSession(_ session: URLSession, dataTask: URLSessionDataTask, didReceive data: Data) {
         var newData: Data = data
         HTTPInterceptorProtocol.matchInterceptor(request: self.request) { interceptor in
-            if let d = interceptor.delegate.httpRequest?(request: self.request, data: data) {
+            if let d = interceptor.delegate?.httpRequest?(request: self.request, data: data) {
                 newData = d
             }
         }
@@ -124,7 +124,7 @@ extension HTTPInterceptorProtocol: URLSessionDataDelegate {
     
     public func urlSession(_ session: URLSession, task: URLSessionTask, didCompleteWithError error: Error?) {
         HTTPInterceptorProtocol.matchInterceptor(request: self.request) { interceptor in
-            interceptor.delegate.httpRequest?(request: self.request, didCompleteWithError: error)
+            interceptor.delegate?.httpRequest?(request: self.request, didCompleteWithError: error)
         }
         if let e = error {
             self.client?.urlProtocol(self, didFailWithError: e)
@@ -145,7 +145,7 @@ extension HTTPInterceptorProtocol: URLSessionDataDelegate {
     
     public func urlSession(_ session: URLSession, task: URLSessionTask, didFinishCollecting metrics: URLSessionTaskMetrics) {
         HTTPInterceptorProtocol.matchInterceptor(request: self.request) { interceptor in
-            interceptor.delegate.httpRequest?(request: self.request, didFinishCollecting: metrics)
+            interceptor.delegate?.httpRequest?(request: self.request, didFinishCollecting: metrics)
         }
     }
     

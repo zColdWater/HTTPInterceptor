@@ -12,4 +12,8 @@ class WKViewController: UIViewController {
         let url = URL(string: "https://zhuanlan.zhihu.com/p/98880261")
         webview.load(URLRequest(url: url!))
     }
+    
+    deinit {
+        print("WKViewController deinit")
+    }
 }

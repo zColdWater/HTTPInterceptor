@@ -1,4 +1,5 @@
 import UIKit
+import HttpInterceptor
 
 class URLSessionViewController: UIViewController {
 
@@ -6,8 +7,11 @@ class URLSessionViewController: UIViewController {
     let identifier = "TableViewIdentifier"
     let sectionHeader: [ContentType] = [.httpRequestHeader,.httpRequestQueryString,.httpRequestBody,.httpResponseHeader,.httpResponseBody,.httpReuestURL,.httpIntercepingMetrics,.httpIntercepingRequest,.httpIntercepingResponse]
     
-    var requestHeader: String? = nil
+    var interceptor: HttpInterceptor? = nil
+    var sessionManager: SessionManager = SessionManager()
+    var session: URLSession? = nil
     
+    var requestHeader: String? = nil
     var httpRequestQueryString: String? = nil
     var httpRequestBody: String? = nil
     var httpResponseHeader: String? = nil
@@ -47,14 +51,20 @@ class URLSessionViewController: UIViewController {
         }
     }
     
+    deinit {
+        print("URLSessionViewController deinit")
+        interceptor?.unregister()
+        session?.finishTasksAndInvalidate()
+    }
+    
     /// `URLSession` start request
     func sessionRequest() {
         let configuration = URLSessionConfiguration.default
-        let session = URLSession(configuration: configuration, delegate: self, delegateQueue: nil)
+        session = URLSession(configuration: configuration, delegate: sessionManager, delegateQueue: nil)
         var request = URLRequest(url: URL(string: "https://httpbin.org/get?name=henry&gender=male")!)
         request.httpMethod = "GET"
         request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
-        let task = session.dataTask(with: request)
+        let task = session!.dataTask(with: request)
         
         if let urlStr = request.url?.absoluteString {
             self.httpRequestURL = urlStr
@@ -74,6 +84,21 @@ class URLSessionViewController: UIViewController {
         }
         
         self.httpRequestQueryString = request.url?.query
+        
+        sessionManager.complete = { [weak self] in
+            DispatchQueue.main.async {
+                self?.tableView.reloadData()
+            }
+        }
+        
+        sessionManager.didReviceData = { [weak self] (bodyString: String?) in
+            self?.httpResponseBody = bodyString
+        }
+        
+        sessionManager.didReviceResponse = { [weak self] (headerStr: String?) in
+            self?.httpResponseHeader = headerStr
+        }
+        
         task.resume()
     }
     
@@ -198,107 +223,6 @@ extension URLSessionViewController: UITableViewDelegate, UITableViewDataSource {
         }
     }
     
-}
-
-
-extension URLSessionViewController: URLSessionDelegate {
-    
-    func urlSession(_ session: URLSession, didBecomeInvalidWithError error: Error?) {
-        print("[URLSessionViewController] URLSessionDelegate didBecomeInvalidWithError:\(String(describing: error))")
-    }
-
-    func urlSession(_ session: URLSession, didReceive challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
-        completionHandler(.performDefaultHandling,nil)
-        print("[URLSessionViewController] URLSessionDelegate didReceive challenge:\(challenge)")
-    }
-    
-    func urlSessionDidFinishEvents(forBackgroundURLSession session: URLSession) {
-        print("[URLSessionViewController] URLSessionDelegate forBackgroundURLSession session:\(session)")
-    }
-}
-
-
-extension URLSessionViewController: URLSessionTaskDelegate {
-    
-    @available(iOS 11.0, *)
-    func urlSession(_ session: URLSession, task: URLSessionTask, willBeginDelayedRequest request: URLRequest, completionHandler: @escaping (URLSession.DelayedRequestDisposition, URLRequest?) -> Void) {
-        print("[URLSessionViewController] URLSessionTaskDelegate willBeginDelayedRequest")
-    }
-
-    func urlSession(_ session: URLSession, taskIsWaitingForConnectivity task: URLSessionTask) {
-        print("[URLSessionViewController] URLSessionTaskDelegate taskIsWaitingForConnectivity")
-    }
-    
-    func urlSession(_ session: URLSession, task: URLSessionTask, willPerformHTTPRedirection response: HTTPURLResponse, newRequest request: URLRequest, completionHandler: @escaping (URLRequest?) -> Void) {
-        completionHandler(request)
-        print("[URLSessionViewController] URLSessionTaskDelegate willPerformHTTPRedirection")
-    }
-    
-    func urlSession(_ session: URLSession, task: URLSessionTask, needNewBodyStream completionHandler: @escaping (InputStream?) -> Void) {
-        print("[URLSessionViewController] URLSessionTaskDelegate needNewBodyStream")
-    }
-
-    func urlSession(_ session: URLSession, task: URLSessionTask, didSendBodyData bytesSent: Int64, totalBytesSent: Int64, totalBytesExpectedToSend: Int64) {
-        print("[URLSessionViewController] URLSessionTaskDelegate didSendBodyData bytesSent")
-    }
-
-    func urlSession(_ session: URLSession, task: URLSessionTask, didFinishCollecting metrics: URLSessionTaskMetrics){
-        print("[URLSessionViewController] URLSessionTaskDelegate didFinishCollecting metrics")
-    }
-    
-    func urlSession(_ session: URLSession, task: URLSessionTask, didCompleteWithError error: Error?) {
-        DispatchQueue.main.async {
-            self.tableView.reloadData()
-        }
-        print("[URLSessionViewController] URLSessionTaskDelegate didCompleteWithError")
-    }
-}
-
-
-extension URLSessionViewController: URLSessionDataDelegate {
-    
-    func urlSession(_ session: URLSession, dataTask: URLSessionDataTask, didReceive response: URLResponse, completionHandler: @escaping (URLSession.ResponseDisposition) -> Void) {
-        let httpResponse = response as! HTTPURLResponse
-        let jsonData = try! JSONSerialization.data(withJSONObject: httpResponse.allHeaderFields, options: [.prettyPrinted,.fragmentsAllowed])
-        let headerStr = String.init(data: jsonData, encoding: String.Encoding.utf8)
-        self.httpResponseHeader = headerStr
-        completionHandler(.allow)
-        print("[URLSessionViewController] URLSessionDataDelegate didReceive response")
-    }
-    
-    func urlSession(_ session: URLSession, dataTask: URLSessionDataTask, didBecome downloadTask: URLSessionDownloadTask) {
-        print("[URLSessionViewController] URLSessionDataDelegate didBecome downloadTask")
-    }
-
-    func urlSession(_ session: URLSession, dataTask: URLSessionDataTask, didBecome streamTask: URLSessionStreamTask) {
-        print("[URLSessionViewController] URLSessionDataDelegate didBecome streamTask")
-    }
-
-    func urlSession(_ session: URLSession, dataTask: URLSessionDataTask, didReceive data: Data) {
-        let bodyString = String(data: data, encoding: String.Encoding.utf8)
-        self.httpResponseBody = bodyString
-        print("[URLSessionViewController] URLSessionDataDelegate didReceive data")
-    }
-
-//    func urlSession(_ session: URLSession, dataTask: URLSessionDataTask, willCacheResponse proposedResponse: CachedURLResponse, completionHandler: @escaping (CachedURLResponse?) -> Void) {
-//        print("[URLSessionViewController] URLSessionDataDelegate willCacheResponse proposedResponse")
-//    }
-}
-
-
-extension URLSessionViewController: URLSessionDownloadDelegate {
-    
-    func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didFinishDownloadingTo location: URL) {
-        print("[URLSessionViewController] URLSessionDownloadDelegate didFinishDownloadingTo location:\(location)")
-    }
-
-    func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didWriteData bytesWritten: Int64, totalBytesWritten: Int64, totalBytesExpectedToWrite: Int64) {
-        print("[URLSessionViewController] URLSessionDownloadDelegate totalBytesWritten:\(totalBytesWritten)")
-    }
-
-    func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didResumeAtOffset fileOffset: Int64, expectedTotalBytes: Int64) {
-        print("[URLSessionViewController] URLSessionDownloadDelegate expectedTotalBytes:\(expectedTotalBytes)")
-    }
 }
 
 

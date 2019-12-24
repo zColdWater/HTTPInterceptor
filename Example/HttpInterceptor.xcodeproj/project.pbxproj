@@ -19,6 +19,7 @@
 		4FD67ADE23B1016E0055E09E /* TableLabelViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FD67ADC23B1016E0055E09E /* TableLabelViewCell.xib */; };
 		4FD67AE123B11ED00055E09E /* ContentTypeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD67AE023B11ED00055E09E /* ContentTypeEnum.swift */; };
 		4FD67AE323B120C60055E09E /* URLSessionViewController+HttpInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD67AE223B120C60055E09E /* URLSessionViewController+HttpInterceptor.swift */; };
+		4FD67AE523B1DEE30055E09E /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD67AE423B1DEE30055E09E /* SessionManager.swift */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
@@ -55,6 +56,7 @@
 		4FD67ADC23B1016E0055E09E /* TableLabelViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableLabelViewCell.xib; sourceTree = "<group>"; };
 		4FD67AE023B11ED00055E09E /* ContentTypeEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentTypeEnum.swift; sourceTree = "<group>"; };
 		4FD67AE223B120C60055E09E /* URLSessionViewController+HttpInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSessionViewController+HttpInterceptor.swift"; sourceTree = "<group>"; };
+		4FD67AE423B1DEE30055E09E /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* HttpInterceptor_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HttpInterceptor_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 				4FD67ADC23B1016E0055E09E /* TableLabelViewCell.xib */,
 				4FD67AE023B11ED00055E09E /* ContentTypeEnum.swift */,
 				4FD67AE223B120C60055E09E /* URLSessionViewController+HttpInterceptor.swift */,
+				4FD67AE423B1DEE30055E09E /* SessionManager.swift */,
 			);
 			name = "Example for HttpInterceptor";
 			path = HttpInterceptor;
@@ -371,6 +374,7 @@
 			files = (
 				4FD67AE323B120C60055E09E /* URLSessionViewController+HttpInterceptor.swift in Sources */,
 				4FC267EC23B0B72500973118 /* URLSessionViewController.swift in Sources */,
+				4FD67AE523B1DEE30055E09E /* SessionManager.swift in Sources */,
 				4FD67AE123B11ED00055E09E /* ContentTypeEnum.swift in Sources */,
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 				4FC267E223B06F1B00973118 /* WKViewController.swift in Sources */,

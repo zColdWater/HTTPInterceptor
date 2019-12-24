@@ -11,5 +11,9 @@ class UIWebViewController: UIViewController {
         let url = URL(string: "https://zhuanlan.zhihu.com/p/98880261")
         webview.loadRequest(URLRequest(url: url!))
     }
+    
+    deinit {
+        print("UIWebViewController deinit")
+    }
 
 }
