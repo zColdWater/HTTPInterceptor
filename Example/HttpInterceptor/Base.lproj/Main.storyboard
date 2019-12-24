@@ -36,16 +36,16 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="GQv-Zu-4wz">
-                                <rect key="frame" x="16" y="44" width="343" height="623"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="GQv-Zu-4wz" secondAttribute="bottom" id="YGR-9M-RP7"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="GQv-Zu-4wz" secondAttribute="trailing" id="i3l-IZ-kqQ"/>
-                            <constraint firstItem="GQv-Zu-4wz" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="pWd-0r-4L8"/>
-                            <constraint firstItem="GQv-Zu-4wz" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="u4m-1f-gpp"/>
+                            <constraint firstAttribute="trailing" secondItem="GQv-Zu-4wz" secondAttribute="trailing" id="A2l-Ti-j4N"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="GQv-Zu-4wz" secondAttribute="bottom" id="bro-yb-pdM"/>
+                            <constraint firstItem="GQv-Zu-4wz" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="s3i-WS-AxM"/>
+                            <constraint firstItem="GQv-Zu-4wz" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="xFo-eu-558"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Yo1-ug-VA0"/>

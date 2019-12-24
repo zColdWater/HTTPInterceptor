@@ -134,7 +134,6 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let type = DemoSectionType(rawValue: indexPath.section) else { assertionFailure(); return UITableViewCell() }
-        
 //        let cell = tableView.dequeueReusableCell(withIdentifier: DemoType.identifier)
         let cell = UITableViewCell(style: .subtitle, reuseIdentifier: DemoRowType.identifier)
         cell.textLabel?.text = dataSource[type]?[indexPath.row].getName()
