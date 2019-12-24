@@ -25,7 +25,9 @@ enum DemoRowType: Int {
     case urlsession_get
     case urlsession_post
     case urlsession_download
-    case urlconnection
+    case urlconnection_get
+    case urlconnection_post
+    case urlconnection_download
     
     func getName() -> String {
         switch self {
@@ -33,8 +35,12 @@ enum DemoRowType: Int {
             return "拦截 UIWebView 中的 HTTP/HTTPS 请求"
         case .wkwebview:
             return "拦截 WKWebView 中的 HTTP/HTTPS 请求"
-        case .urlconnection:
-            return "拦截 URLConnection 发起的http请求"
+        case .urlconnection_get:
+            return "拦截 URLConnection 发起的 GET 请求"
+        case .urlconnection_post:
+            return "拦截 URLConnection 发起的 POST 请求"
+        case .urlconnection_download:
+            return "拦截 URLConnection 发起的 DOWNLOAD 请求"
         case .urlsession_get:
             return "拦截 URLSession 发起的 GET 请求"
         case .urlsession_post:
@@ -50,8 +56,12 @@ enum DemoRowType: Int {
             return "拦截UIWebView中所有的 png, svg, jpeg, gif 结尾的链接，替换成自定义资源链接。 测试链接 "
         case .wkwebview:
             return "拦截WKWebView中所有的 png, svg, jpeg, gif 结尾的链接，替换成自定义资源链接。"
-        case .urlconnection:
-            return "URLConnection的所有网络请求"
+        case .urlconnection_get:
+            return "拦截网络GET请求"
+        case .urlconnection_post:
+            return "拦截网络POST请求"
+        case .urlconnection_download:
+            return "拦截网络DOWNLOAD请求"
         case .urlsession_get:
             return "拦截网络GET请求"
         case .urlsession_post:
@@ -71,9 +81,19 @@ enum DemoRowType: Int {
             let vc = WKViewController()
             viewController.navigationController?.pushViewController(vc, animated: true)
             return
-        case .urlconnection:
+        case .urlconnection_get:
             let vc = URLSessionViewController()
-            vc.requestType = .nsurlconnection
+            vc.requestType = .nsurlconnection_get
+            viewController.navigationController?.pushViewController(vc, animated: true)
+            return
+        case .urlconnection_post:
+            let vc = URLSessionViewController()
+            vc.requestType = .nsurlconnection_post
+            viewController.navigationController?.pushViewController(vc, animated: true)
+            return
+        case .urlconnection_download:
+            let vc = URLSessionViewController()
+            vc.requestType = .nsurlconnection_download
             viewController.navigationController?.pushViewController(vc, animated: true)
             return
         case .urlsession_get:
@@ -105,7 +125,7 @@ class ViewController: UIViewController {
 
     var dataSource: [DemoSectionType: [DemoRowType]] = [.webview: [.uiwebview,.wkwebview],
                                                         .urlsession: [.urlsession_get,.urlsession_post,.urlsession_download],
-                                                        .urlconnection: [.urlconnection]]
+                                                        .urlconnection: [.urlconnection_get,.urlconnection_post,.urlconnection_download]]
     
     override func viewDidLoad() {
         super.viewDidLoad()

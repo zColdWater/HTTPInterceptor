@@ -30,7 +30,9 @@ class URLSessionViewController: UIViewController {
         case urlsession_get
         case urlsession_post
         case urlsession_download
-        case nsurlconnection
+        case nsurlconnection_get
+        case nsurlconnection_post
+        case nsurlconnection_download
     }
     
     override func viewDidLoad() {
@@ -44,9 +46,15 @@ class URLSessionViewController: UIViewController {
         tableView.estimatedRowHeight = 44.0;
 
         switch requestType {
-        case .nsurlconnection:
+        case .nsurlconnection_get:
             title = "NSURLConnection"
-            connectionRequest()
+            connectionGETRequest()
+        case .nsurlconnection_post:
+            title = "NSURLConnection"
+            connectionPOSTRequest()
+        case .nsurlconnection_download:
+            title = "NSURLConnection"
+            connectionDownloadRequest()
         case .urlsession_get:
             title = "URLSession GET"
             sessionGETRequest()
@@ -76,7 +84,7 @@ class URLSessionViewController: UIViewController {
     func sessionPOSTRequest() {
         let configuration = URLSessionConfiguration.default
         session = URLSession(configuration: configuration, delegate: sessionManager, delegateQueue: nil)
-        var request = URLRequest(url: URL(string: "https://httpbin.org/get?name=henry&gender=male")!)
+        var request = URLRequest(url: URL(string: "https://httpbin.org/post?name=henry&gender=male")!)
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         let parameterDictionary: [String: Any] = ["name":"henry","subs":["var","let","some","option","undefine"]]
@@ -91,21 +99,43 @@ class URLSessionViewController: UIViewController {
     func sessionDownloadRequest() {
         let configuration = URLSessionConfiguration.default
         session = URLSession(configuration: configuration, delegate: sessionManager, delegateQueue: nil)
-        let request = URLRequest(url: URL(string: "http://47.99.237.180:2088/files/628cae9fb56964c7c158ccd0a5bf83ff")!)
+        var request = URLRequest(url: URL(string: "http://47.99.237.180:2088/files/628cae9fb56964c7c158ccd0a5bf83ff?name=henry&gender=male")!)
+        request.httpMethod = "GET"
+        request.setValue("NSURLConnectionDownloadSample", forHTTPHeaderField: "Custom-Field")
         let task = session!.downloadTask(with: request)
         
         parseRequest(request)
         task.resume()
     }
     
-    /// `NSURLConnection` start request
-    func connectionRequest() {
+    /// `NSURLConnection` start `post` request
+    func connectionPOSTRequest() {
         var request = URLRequest(url: URL(string: "https://httpbin.org/post")!)
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         let parameterDictionary: [String: Any] = ["name":"henry","subs":["var","let","some","option","undefine"]]
         request.httpBody = try! JSONSerialization.data(withJSONObject: parameterDictionary, options: [.fragmentsAllowed,.prettyPrinted])
         
+        parseRequest(request)
+        NSURLConnection(request: request, delegate: self, startImmediately: true)
+    }
+    
+    /// `NSURLConnection` start `get` request
+    func connectionGETRequest() {
+        var request = URLRequest(url: URL(string: "https://httpbin.org/get?name=henry&gender=male")!)
+        request.httpMethod = "GET"
+        request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+        
+        parseRequest(request)
+        NSURLConnection(request: request, delegate: self, startImmediately: true)
+    }
+    
+    /// `NSURLConnection` start `download` request
+    func connectionDownloadRequest() {
+        var request = URLRequest(url: URL(string: "http://47.99.237.180:2088/files/628cae9fb56964c7c158ccd0a5bf83ff?name=henry&gender=male")!)
+        request.httpMethod = "GET"
+        request.setValue("NSURLConnectionDownloadSample", forHTTPHeaderField: "Custom-Field")
+
         parseRequest(request)
         NSURLConnection(request: request, delegate: self, startImmediately: true)
     }
