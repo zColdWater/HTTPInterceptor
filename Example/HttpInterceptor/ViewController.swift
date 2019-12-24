@@ -69,7 +69,8 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "HTTPInterceptor-Demo"
+        navigationItem.titleView = UIImageView(image: UIImage(named: "logo"))
+
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: DemoType.identifier)
