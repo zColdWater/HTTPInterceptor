@@ -3,7 +3,7 @@
 [![CI Status](https://img.shields.io/badge/build-success-green)](https://travis-ci.org/1486297824@qq.com/HttpInterceptor)
 [![Version](https://img.shields.io/badge/pod-v1.0.1-green)](https://cocoapods.org/pods/HttpInterceptor)
 [![License](https://img.shields.io/badge/license-MIT-blue)](https://cocoapods.org/pods/HttpInterceptor)
-[![Platform](https://img.shields.io/badge/platform-ios-gray)](https://cocoapods.org/pods/HttpInterceptor)
+[![Platform](https://img.shields.io/badge/platform-ios-lightgrey)](https://cocoapods.org/pods/HttpInterceptor)
 
 ## About Name
 The `HttpInterceptor` name is taken by someone else, so use `BestHttpInterceptor`.
