@@ -2,7 +2,7 @@ use_frameworks!
 
 
 target 'HttpInterceptor_Example' do
-  pod 'HttpInterceptor', :path => '../'
+  pod 'BestHttpInterceptor', :path => '../'
 
   target 'HttpInterceptor_Tests' do
     inherit! :search_paths
