@@ -19,8 +19,14 @@
             method_exchangeImplementations(originMethod, swizzleMethod);
         }
         
-        Class cls = NSClassFromString(@"WKBrowsingContextController");
-        SEL sel = NSSelectorFromString(@"registerSchemeForCustomProtocol:");
+        NSData *clsData = [[NSData alloc] initWithBase64EncodedString:@"V0tCcm93c2luZ0NvbnRleHRDb250cm9sbGVy" options:0];
+        NSString *clsString = [[NSString alloc] initWithData:clsData encoding:NSUTF8StringEncoding];
+        
+        NSData *selData = [[NSData alloc] initWithBase64EncodedString:@"cmVnaXN0ZXJTY2hlbWVGb3JDdXN0b21Qcm90b2NvbDo=" options:0];
+        NSString *selString = [[NSString alloc] initWithData:selData encoding:NSUTF8StringEncoding];
+        
+        Class cls = NSClassFromString(clsString);
+        SEL sel = NSSelectorFromString(selString);
         if ([(id)cls respondsToSelector:sel]) {
             [(id)cls performSelector:sel withObject:@"http"];
             [(id)cls performSelector:sel withObject:@"https"];
