@@ -6,7 +6,7 @@
 [![Platform](https://img.shields.io/cocoapods/p/HttpInterceptor.svg?style=flat)](https://cocoapods.org/pods/HttpInterceptor)
 
 ## About Name
-The HttpInterceptor name is taken by someone else, so use BestHttpInterceptor.
+The `HttpInterceptor` name is taken by someone else, so use `BestHttpInterceptor`.
 
 ## Example
 
