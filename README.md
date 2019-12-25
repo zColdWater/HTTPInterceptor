@@ -1,4 +1,4 @@
-# HttpInterceptor
+![HTTPInterceptor: intercepting http/https request](http://47.99.237.180:2088/files/6a93b4a10761a6fd68b482ba27947c35)
 
 [![CI Status](https://img.shields.io/travis/1486297824@qq.com/HttpInterceptor.svg?style=flat)](https://travis-ci.org/1486297824@qq.com/HttpInterceptor)
 [![Version](https://img.shields.io/cocoapods/v/HttpInterceptor.svg?style=flat)](https://cocoapods.org/pods/HttpInterceptor)
@@ -10,6 +10,8 @@
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
 <div>
+<img style="float: left;" src="http://47.99.237.180:2088/files/f689553368e1ced61ce4c1932757f71a" width="200" height="400" />
+
 <img style="float: left;" src="http://47.99.237.180:2088/files/21c6bccc5dc85983e73c09794dd48a75" width="200" height="400" />
 
 <img style="float: left;" src="http://47.99.237.180:2088/files/0426219c13311c0e680fed353c8da725" width="200" height="400" />
@@ -51,6 +53,21 @@ extension WKViewController: HttpInterceptDelegate {
         var newRequest = request
         newRequest.url = URL(string: "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1577182928067&di=4a039119f074e775880d33ee7589e556&imgtype=0&src=http%3A%2F%2Fimg.mp.itc.cn%2Fupload%2F20170307%2Fc1529f8154f949ef83abee83f6d5ece7.jpg")!
         return newRequest
+    }
+    
+    func httpRequest(response: URLResponse) -> URLResponse {
+        return response
+    }
+    
+    func httpRequest(request: URLRequest, data: Data) -> Data {
+        return data
+    }
+    
+    func httpRequest(request: URLRequest, didCompleteWithError error: Error?) {
+    }
+    
+    func httpRequest(request: URLRequest, didFinishCollecting metrics: URLSessionTaskMetrics) {
+        
     }
     
 }
