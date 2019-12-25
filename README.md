@@ -22,6 +22,13 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 <img style="float: left;" src="http://47.99.237.180:2088/files/8b2e4a9d43903b2aa8ff9d6ff3dba111" width="200" height="400" />
 </div>
 
+## Features
+
+- [x] WKWebView, UIWebView, URLSession, URLConnection, all network http(s) requests can be intercepted.
+- [x] Cannot intercept HTTPBody in WKWebView Post request.
+- [x] Custom filter URLRequest.
+- [x] Can intercept and replace URLRequest, URLResponse, Data.
+
 ## Usage
 
 1.Register Intercept Rules
