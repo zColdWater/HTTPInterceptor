@@ -5,6 +5,9 @@
 [![License](https://img.shields.io/cocoapods/l/HttpInterceptor.svg?style=flat)](https://cocoapods.org/pods/HttpInterceptor)
 [![Platform](https://img.shields.io/cocoapods/p/HttpInterceptor.svg?style=flat)](https://cocoapods.org/pods/HttpInterceptor)
 
+## About Name
+The HttpInterceptor name is taken by someone else, so use BestHttpInterceptor.
+
 ## Example
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
@@ -23,7 +26,7 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 1.Register Intercept Rules
 ```swift
-import HttpInterceptor
+import BestHttpInterceptor
 
 enum PathExtension: String {
      case gif = "gif"
@@ -92,7 +95,7 @@ HttpInterceptor is available through [CocoaPods](https://cocoapods.org). To inst
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'HttpInterceptor'
+pod 'BestHttpInterceptor'
 ```
 
 ## Author
