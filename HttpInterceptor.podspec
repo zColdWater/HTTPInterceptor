@@ -7,7 +7,7 @@
 #
 
 Pod::Spec.new do |s|
-  s.name             = 'HttpInterceptor'
+  s.name             = 'BestHttpInterceptor'
   s.version          = '1.0.0'
   s.summary          = 'A short description of HttpInterceptor.'
 
