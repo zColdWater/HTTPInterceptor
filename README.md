@@ -10,6 +10,8 @@
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
 <div>
+<img style="float: left;" src="http://47.99.237.180:2088/files/f689553368e1ced61ce4c1932757f71a" width="200" height="400" />
+
 <img style="float: left;" src="http://47.99.237.180:2088/files/21c6bccc5dc85983e73c09794dd48a75" width="200" height="400" />
 
 <img style="float: left;" src="http://47.99.237.180:2088/files/0426219c13311c0e680fed353c8da725" width="200" height="400" />
