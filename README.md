@@ -25,6 +25,14 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 ```swift
 import HttpInterceptor
 
+enum PathExtension: String {
+     case gif = "gif"
+     case png = "png"
+     case jpeg = "jpeg"
+     case svg = "svg"
+     case jpg = "jpg"
+ }
+
 let condition = HttpIntercepCondition(schemeType: .all) { (request) -> Bool in
     guard let pathExtensionStr = request.url?.pathExtension,
             let host = request.url?.host else {
