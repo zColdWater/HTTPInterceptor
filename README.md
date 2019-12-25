@@ -9,9 +9,7 @@
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
-<img src="http://47.99.237.180:2088/files/570a8c7894afd59054f6210920750b50" width="40" height="40" />
-
-<img src="http://47.99.237.180:2088/files/d92e0f168bcd97b973ae324e265ebebb" width="40" height="40" />
+![wkwebview.png](http://47.99.237.180:2088/files/21c6bccc5dc85983e73c09794dd48a75)
 
 
 ## Usage
