@@ -21,7 +21,7 @@ Pod::Spec.new do |s|
 TODO: Add long description of the pod here.
                        DESC
 
-  s.homepage         = 'https://github.com/1486297824@qq.com/HttpInterceptor'
+  s.homepage         = 'http://47.99.237.180:8080/'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { '1486297824@qq.com' => 'yongpeng.zhu@nio.com' }
