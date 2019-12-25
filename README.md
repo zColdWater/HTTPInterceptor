@@ -1,6 +1,6 @@
 ![HTTPInterceptor: intercepting http/https request](http://47.99.237.180:2088/files/6a93b4a10761a6fd68b482ba27947c35)
 
-[![CI Status](https://img.shields.io/travis/1486297824@qq.com/HttpInterceptor.svg?style=flat)](https://travis-ci.org/1486297824@qq.com/HttpInterceptor)
+[![CI Status](https://img.shields.io/badge/build-success-green)](https://travis-ci.org/1486297824@qq.com/HttpInterceptor)
 [![Version](https://img.shields.io/badge/pod-v1.0.1-green)](https://cocoapods.org/pods/HttpInterceptor)
 [![License](https://img.shields.io/cocoapods/l/HttpInterceptor.svg?style=flat)](https://cocoapods.org/pods/HttpInterceptor)
 [![Platform](https://img.shields.io/cocoapods/p/HttpInterceptor.svg?style=flat)](https://cocoapods.org/pods/HttpInterceptor)
