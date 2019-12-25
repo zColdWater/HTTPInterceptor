@@ -21,11 +21,11 @@ Pod::Spec.new do |s|
 TODO: Add long description of the pod here.
                        DESC
 
-  s.homepage         = 'http://47.99.237.180:8080/'
+  s.homepage         = 'https://github.com/zColdWater/HTTPInterceptor'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { '1486297824@qq.com' => 'yongpeng.zhu@nio.com' }
-  s.source           = { :git => 'https://github.com/1486297824@qq.com/HttpInterceptor.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/zColdWater/HTTPInterceptor.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '10.0'
