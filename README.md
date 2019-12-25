@@ -55,6 +55,21 @@ extension WKViewController: HttpInterceptDelegate {
         return newRequest
     }
     
+    func httpRequest(response: URLResponse) -> URLResponse {
+        return response
+    }
+    
+    func httpRequest(request: URLRequest, data: Data) -> Data {
+        return data
+    }
+    
+    func httpRequest(request: URLRequest, didCompleteWithError error: Error?) {
+    }
+    
+    func httpRequest(request: URLRequest, didFinishCollecting metrics: URLSessionTaskMetrics) {
+        
+    }
+    
 }
 ```
 
