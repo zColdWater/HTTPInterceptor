@@ -1,7 +1,7 @@
 # Acknowledgements
 This application makes use of the following third party libraries:
 
-## HttpInterceptor
+## BestHttpInterceptor
 
 Copyright (c) 2019 1486297824@qq.com <yongpeng.zhu@nio.com>
 

@@ -1,5 +1,4 @@
 import UIKit
-import HttpInterceptor
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

@@ -1,5 +1,5 @@
 import UIKit
-import HttpInterceptor
+import BestHttpInterceptor
 
 class URLSessionViewController: UIViewController {
 

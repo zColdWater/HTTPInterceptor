@@ -1,6 +1,6 @@
 import UIKit
 import WebKit
-import HttpInterceptor
+import BestHttpInterceptor
 
 class UIWebViewController: UIViewController {
 

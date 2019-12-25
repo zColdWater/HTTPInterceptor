@@ -1,16 +1,16 @@
 PODS:
-  - HttpInterceptor (0.1.0)
+  - BestHttpInterceptor (1.0.0)
 
 DEPENDENCIES:
-  - HttpInterceptor (from `../`)
+  - BestHttpInterceptor (from `../`)
 
 EXTERNAL SOURCES:
-  HttpInterceptor:
+  BestHttpInterceptor:
     :path: "../"
 
 SPEC CHECKSUMS:
-  HttpInterceptor: 78e80231dd4708feb4454102522a0452791bf4fe
+  BestHttpInterceptor: 559e864a336a2700d722485624f20afac48dd10b
 
-PODFILE CHECKSUM: f99bc68995574fe2efccd72eab91dc36e8ea6a8d
+PODFILE CHECKSUM: 82e03cbef04c3fbee3a6c64d7312c933069fa5c5
 
 COCOAPODS: 1.8.4

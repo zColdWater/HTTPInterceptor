@@ -1,5 +1,5 @@
 import XCTest
-import HttpInterceptor
+import BestHttpInterceptor
 
 class Tests: XCTestCase {
     

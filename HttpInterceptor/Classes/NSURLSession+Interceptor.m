@@ -1,6 +1,6 @@
 #import "NSURLSession+Interceptor.h"
 #import <objc/runtime.h>
-#import <HttpInterceptor/HttpInterceptor-Swift.h>
+#import <BestHttpInterceptor/BestHttpInterceptor-Swift.h>
 
 
 @implementation NSURLSession (Interceptor)

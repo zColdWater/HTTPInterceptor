@@ -12,6 +12,6 @@
 
 #import "NSURLSession+Interceptor.h"
 
-FOUNDATION_EXPORT double HttpInterceptorVersionNumber;
-FOUNDATION_EXPORT const unsigned char HttpInterceptorVersionString[];
+FOUNDATION_EXPORT double BestHttpInterceptorVersionNumber;
+FOUNDATION_EXPORT const unsigned char BestHttpInterceptorVersionString[];
 
