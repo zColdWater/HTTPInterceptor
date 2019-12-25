@@ -44,13 +44,13 @@
 
 /* Begin PBXFileReference section */
 		0066FAB853F86E2BF8EE9CBA1BD955C0 /* HttpInterceptor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HttpInterceptor.swift; path = HttpInterceptor/Classes/HttpInterceptor.swift; sourceTree = "<group>"; };
-		02718DB23AE6533084F337DC6C2CE1E7 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		02718DB23AE6533084F337DC6C2CE1E7 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		0596C3AFD8026BB2CB56EB1097C2934C /* HttpURLSessionChallengeSender.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HttpURLSessionChallengeSender.swift; path = HttpInterceptor/Classes/HttpURLSessionChallengeSender.swift; sourceTree = "<group>"; };
 		136858EFCAA3C8614C77925D847BCA49 /* HttpInterceptor.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = HttpInterceptor.modulemap; sourceTree = "<group>"; };
 		14936F0ED9D7E0F5A830417413C7D51B /* HttpInterceptDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HttpInterceptDelegate.swift; path = HttpInterceptor/Classes/HttpInterceptDelegate.swift; sourceTree = "<group>"; };
 		185A09B1E1CFB78185EB65CED01C8F26 /* Pods-HttpInterceptor_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-HttpInterceptor_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
-		194B9BD657A8ADDD92A9DB891E966A6E /* Pods_HttpInterceptor_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_HttpInterceptor_Example.framework; path = "Pods-HttpInterceptor_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2345D2C36F610B6EEAC54EF23E0D6671 /* HttpInterceptor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = HttpInterceptor.framework; path = HttpInterceptor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		194B9BD657A8ADDD92A9DB891E966A6E /* Pods_HttpInterceptor_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HttpInterceptor_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2345D2C36F610B6EEAC54EF23E0D6671 /* HttpInterceptor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HttpInterceptor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		4151373C72C25E65CD4625CFA0C24543 /* Pods-HttpInterceptor_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-HttpInterceptor_Example.modulemap"; sourceTree = "<group>"; };
 		49AF240A577749930369345E750ACA82 /* HttpInterceptor.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = HttpInterceptor.xcconfig; sourceTree = "<group>"; };
@@ -61,15 +61,15 @@
 		62DAA8E853873D1FADB3347F053B22B3 /* HttpInterceptor-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "HttpInterceptor-dummy.m"; sourceTree = "<group>"; };
 		675CEBB89B555F506FC84A64C1EAAA05 /* HttpInterceptor-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "HttpInterceptor-umbrella.h"; sourceTree = "<group>"; };
 		69BCA0284AEA6DBF3992F195A69DECB1 /* Pods-HttpInterceptor_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-HttpInterceptor_Example-acknowledgements.plist"; sourceTree = "<group>"; };
-		6ED820321FAECC3B9993D8F139FE8B75 /* HttpInterceptor.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = HttpInterceptor.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		6ED820321FAECC3B9993D8F139FE8B75 /* HttpInterceptor.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = HttpInterceptor.podspec; sourceTree = "<group>"; tabWidth = 2; };
 		6F708235AFB0A7D443BD90E9436FC01C /* HttpIntercepCondition.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HttpIntercepCondition.swift; path = HttpInterceptor/Classes/HttpIntercepCondition.swift; sourceTree = "<group>"; };
 		8B0B8F81C1F339B47B289688AB5C8633 /* Pods-HttpInterceptor_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-HttpInterceptor_Example-dummy.m"; sourceTree = "<group>"; };
-		9353D619A7D1C168CBA3A67D875E35A0 /* Pods_HttpInterceptor_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_HttpInterceptor_Tests.framework; path = "Pods-HttpInterceptor_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9353D619A7D1C168CBA3A67D875E35A0 /* Pods_HttpInterceptor_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HttpInterceptor_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		93F794108612120E311706C3D655D911 /* Pods-HttpInterceptor_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-HttpInterceptor_Tests-dummy.m"; sourceTree = "<group>"; };
 		99BC8FDB61F11CFAD32771ACF869B1C5 /* Pods-HttpInterceptor_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-HttpInterceptor_Tests-umbrella.h"; sourceTree = "<group>"; };
 		9A152F3A32D3E4F023B6E43FC61B634C /* Pods-HttpInterceptor_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-HttpInterceptor_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		B1F8D3C455AEEDEDC15AACA91BBE9C55 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		B1F8D3C455AEEDEDC15AACA91BBE9C55 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		B579947DC0D87660488AA5488C73EC44 /* NSURLSession+Interceptor.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSURLSession+Interceptor.m"; path = "HttpInterceptor/Classes/NSURLSession+Interceptor.m"; sourceTree = "<group>"; };
 		B6E0F60D4CE99BE97B1C63724A3BC5BA /* Pods-HttpInterceptor_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-HttpInterceptor_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		B7865F17E8580F08F9462D4DC49824F2 /* Pods-HttpInterceptor_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-HttpInterceptor_Example-umbrella.h"; sourceTree = "<group>"; };
@@ -552,8 +552,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
@@ -585,7 +584,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -654,7 +653,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
