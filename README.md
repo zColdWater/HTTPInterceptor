@@ -9,9 +9,10 @@
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
-[!wkwebview](http://47.99.237.180:2088/files/570a8c7894afd59054f6210920750b50)
+![wkwebview.gif](http://47.99.237.180:2088/files/570a8c7894afd59054f6210920750b50)
 
-[!session](http://47.99.237.180:2088/files/d92e0f168bcd97b973ae324e265ebebb)
+![session.gif](http://47.99.237.180:2088/files/d92e0f168bcd97b973ae324e265ebebb)
+
 
 ## Usage
 
