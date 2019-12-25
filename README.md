@@ -5,6 +5,13 @@
 [![License](https://img.shields.io/badge/license-MIT-blue)](https://cocoapods.org/pods/HttpInterceptor)
 [![Platform](https://img.shields.io/badge/platform-ios-lightgrey)](https://cocoapods.org/pods/HttpInterceptor)
 
+如果对你有帮助，给楼主一个小星星✨是对楼主最好的支持和动力。
+如果有疑问，欢迎来提issue，你们的提问是对楼主最好的反馈。
+
+If you have any help to you, plesae give the project a little stars ✨ is the best support for me.
+If you have any questions, please submit issue for me. Your issues are the best feedback for me.
+
+
 ## About Name
 The `HttpInterceptor` name is taken by someone else, so use `BestHttpInterceptor`.
 
