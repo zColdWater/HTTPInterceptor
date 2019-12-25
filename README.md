@@ -9,11 +9,13 @@
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
+<div>
 <img style="float: left;" src="http://47.99.237.180:2088/files/21c6bccc5dc85983e73c09794dd48a75" width="200" height="400" />
 
 <img style="float: left;" src="http://47.99.237.180:2088/files/0426219c13311c0e680fed353c8da725" width="200" height="400" />
 
 <img style="float: left;" src="http://47.99.237.180:2088/files/8b2e4a9d43903b2aa8ff9d6ff3dba111" width="200" height="400" />
+</div>
 
 ## Usage
 
