@@ -1,5 +1,5 @@
 PODS:
-  - BestHttpInterceptor (1.0.0)
+  - BestHttpInterceptor (1.0.1)
 
 DEPENDENCIES:
   - BestHttpInterceptor (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  BestHttpInterceptor: 559e864a336a2700d722485624f20afac48dd10b
+  BestHttpInterceptor: 3e368632144e7a44280b56b2c94902a3b6bda9b0
 
 PODFILE CHECKSUM: 82e03cbef04c3fbee3a6c64d7312c933069fa5c5
 

@@ -33,34 +33,62 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 1.Register Intercept Rules
 ```swift
+import UIKit
+import WebKit
 import BestHttpInterceptor
 
-enum PathExtension: String {
-     case gif = "gif"
-     case png = "png"
-     case jpeg = "jpeg"
-     case svg = "svg"
-     case jpg = "jpg"
- }
+class WKViewController: UIViewController {
 
-let condition = HttpIntercepCondition(schemeType: .all) { (request) -> Bool in
-    guard let pathExtensionStr = request.url?.pathExtension,
-            let host = request.url?.host else {
-        return false
+    @IBOutlet weak var webview: WKWebView!
+    
+    var interceptor: HttpInterceptor? = nil
+    
+    enum PathExtension: String {
+        case gif = "gif"
+        case png = "png"
+        case jpeg = "jpeg"
+        case svg = "svg"
+        case jpg = "jpg"
     }
-    if host.contains("ss") || host.contains("timgmb") {
-        return true
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        title = "WKWebViewController"
+        
+        registerInterceptor()
+        
+        let url = URL(string: "https://www.baidu.com/")
+        webview.load(URLRequest(url: url!))
     }
-    let pathExtension = WKViewController.PathExtension(rawValue: pathExtensionStr)
-    switch pathExtension {
-    case .gif,.jpeg,.png,.svg,.jpg:
-        return true
-    case .none:
-        return false
+    
+    func registerInterceptor() {
+        let condition = HttpIntercepCondition(schemeType: .all) { (request) -> Bool in
+            guard let pathExtensionStr = request.url?.pathExtension,
+                  let host = request.url?.host else {
+                return false
+            }
+            if host.contains("ss") || host.contains("timgmb") {
+                return true
+            }
+            let pathExtension = WKViewController.PathExtension(rawValue: pathExtensionStr)
+            switch pathExtension {
+            case .gif,.jpeg,.png,.svg,.jpg:
+                return true
+            case .none:
+                return false
+            }
+        }
+        interceptor = HttpInterceptor(condition: condition, delegate: self)
+        interceptor?.register()
     }
+    
+    deinit {
+        print("WKViewController deinit")
+        interceptor?.unregister()
+    }
+    
 }
-interceptor = HttpInterceptor(condition: condition, delegate: self)
-interceptor?.register()
 ```
 
 2.Implement **HttpInterceptDelegate** Delegate
