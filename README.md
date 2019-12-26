@@ -34,16 +34,7 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 <img style="float: left;" src="http://47.99.237.180:2088/files/8b2e4a9d43903b2aa8ff9d6ff3dba111" width="200" height="400" />
 </div>
 
-## Features
-
-- [x] WKWebView, UIWebView, URLSession, URLConnection, all network http(s) requests can be intercepted.
-- [x] Cannot intercept HTTPBody in WKWebView Post request.
-- [x] Custom filter URLRequest.
-- [x] Can intercept and replace URLRequest, URLResponse, Data.
-
-## Usage
-
-1.Register Intercept Rules
+1.注册拦截条件
 ```swift
 import UIKit
 import WebKit
@@ -111,9 +102,10 @@ class WKViewController: UIViewController {
 }
 ```
 
-2.Implement **HttpInterceptDelegate** Delegate
+2.实现 **HttpInterceptDelegate** 代理
 ```swift
 extension WKViewController: HttpInterceptDelegate {
+
     // Replace Request URL
     func httpRequest(request: URLRequest) -> URLRequest {
         // 将拦截到的Request，换成我们新的Request。 
@@ -134,7 +126,68 @@ extension WKViewController: HttpInterceptDelegate {
     }
     
     func httpRequest(request: URLRequest, didFinishCollecting metrics: URLSessionTaskMetrics) {
-        
+    }
+    
+}
+```
+
+## Features
+
+- [x] WKWebView, UIWebView, URLSession, URLConnection, all network http(s) requests can be intercepted.
+- [x] Cannot intercept HTTPBody in WKWebView Post request.
+- [x] Custom filter URLRequest.
+- [x] Can intercept and replace URLRequest, URLResponse, Data.
+
+## Usage
+
+1.Define intercept condition
+```swift
+import BestHttpInterceptor
+
+let condition = HttpIntercepCondition(schemeType: .all) { (request) -> Bool in
+    return true
+}
+
+```
+2.New a interceptor instance
+```swift
+let interceptor = HttpInterceptor(condition: condition, delegate: self)    
+```
+
+3.Start register
+```swift
+interceptor.register()
+```
+
+4.Cancel register
+```swift
+interceptor.unregister()
+```
+
+5.Implement `HttpInterceptorDelegate` delegate,  callback to you
+```swift
+extension SomeClass: HttpInterceptDelegate {
+    
+    // Intercept http request then return a new request 
+    func httpRequest(request: URLRequest) -> URLRequest {
+        return request
+    }
+    
+    // Intercept http response then return a new response 
+    func httpRequest(response: URLResponse) -> URLResponse {
+        return response
+    }
+    
+    // Intercept http response data then return a new response data
+    func httpRequest(request: URLRequest, data: Data) -> Data {
+        return data
+    }
+    
+    // When the request is complete call this api
+    func httpRequest(request: URLRequest, didCompleteWithError error: Error?) {
+    }
+    
+    func httpRequest(request: URLRequest, didFinishCollecting metrics: URLSessionTaskMetrics) {
     }
     
 }
