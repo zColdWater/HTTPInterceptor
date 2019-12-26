@@ -54,7 +54,6 @@ class WKViewController: UIViewController {
         case jpg = "jpg"
     }
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "WKWebViewController"
@@ -105,7 +104,6 @@ class WKViewController: UIViewController {
 2.实现 **HttpInterceptDelegate** 代理
 ```swift
 extension WKViewController: HttpInterceptDelegate {
-
     // Replace Request URL
     func httpRequest(request: URLRequest) -> URLRequest {
         // 将拦截到的Request，换成我们新的Request。 
