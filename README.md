@@ -75,7 +75,11 @@ class WKViewController: UIViewController {
     }
     
     func registerInterceptor() {
+        // 定义拦截条件，根据URLRequest参数来进行判断，是否需要拦截此Request，返回Bool告诉HTTPInterceptor。
         let condition = HttpIntercepCondition(schemeType: .all) { (request) -> Bool in
+            
+            // 拦截逻辑，这里是要拦截host带有ss和timgmb和结尾是 gif，jpeg，png，svg，jpg的Request。
+            // 大家可以根据自己的需求来定义这个条件。
             guard let pathExtensionStr = request.url?.pathExtension,
                   let host = request.url?.host else {
                 return false
@@ -90,13 +94,17 @@ class WKViewController: UIViewController {
             case .none:
                 return false
             }
+            
         }
         interceptor = HttpInterceptor(condition: condition, delegate: self)
+        
+        // 开始注册
         interceptor?.register()
     }
     
     deinit {
         print("WKViewController deinit")
+        // 取消注册
         interceptor?.unregister()
     }
     
@@ -108,6 +116,7 @@ class WKViewController: UIViewController {
 extension WKViewController: HttpInterceptDelegate {
     // Replace Request URL
     func httpRequest(request: URLRequest) -> URLRequest {
+        // 将拦截到的Request，换成我们新的Request。 
         var newRequest = request
         newRequest.url = URL(string: "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1577182928067&di=4a039119f074e775880d33ee7589e556&imgtype=0&src=http%3A%2F%2Fimg.mp.itc.cn%2Fupload%2F20170307%2Fc1529f8154f949ef83abee83f6d5ece7.jpg")!
         return newRequest
