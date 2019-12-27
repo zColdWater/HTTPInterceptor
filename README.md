@@ -213,7 +213,7 @@ pod 'BestHttpInterceptor'
 
 ```
 
-or
+if you want use it with Debug 
 
 ```ruby
 
