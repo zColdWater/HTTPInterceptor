@@ -34,10 +34,11 @@ HTTPInterceptor 虽然可以拦截WKWebView中的网络请求，但是却无法�
 因为去拦截WKWebView中的网络请求，HTTPInterceptor 使用了苹果私有API，这是不安全的，也是不应该的，但是如果你是`Debug`下使用它，这就另当别论了。 
 
 关于如何得到，WKWebView中`POST`请求的`HTTPBody`，我看了一些文章。
-例如: WKWebView注入JS脚本，JS脚本Hook所有的`XHR`和`Fetch`网络请求，然后再通过Native和Web通信通道，比如在WK容器中，JS使用`alert`方法，`prompt`方法，都可以将JS侧的内容发送给Native，Native再去保存，等等。
+例如: WKWebView注入JS脚本，JS脚本Hook所有的`XHR`和`Fetch`网络请求，然后再通过Native和Web通信通道，比如在WK容器中，JS使用`alert`方法，`prompt`方法，都可以将JS侧的内容发送给Native，Native解析传来的内容，解析出类名，方法签名，参数等等，在Runtime下创建对象调用去保存，等等。
 
 可以看到的是这样的逻辑实在有些麻烦，而且需要考虑的东西非常多，因为你是`Hook`了JS的请求入口，这是一个block操作，稍有不慎就会给H5带来线上灾难，而且全部是因为要拿一个`HTTPBody`，所以我认为这是非常不值得的， 为了程序的鲁棒性也不应该使用这样的实现。 
 
+Fetching HTTPBody using HTTPInterceptor is not supported.
 
 
 ## About Name
