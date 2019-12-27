@@ -19,6 +19,7 @@ If you have any questions, please submit issue for me. Your issues are the best 
 
 ## About HTTPInterceptor
 HTTPInterceptor 是一个iOS网络请求拦截器，它可以拦截基于`URLSession`和`NSURLConnection`发出的HTTP(s)请求。
+对于已经使用过URLProtocol的项目来说，如果`HTTPInterceptor`和其他`URLProtocol` Handle的URL一样，就要看注入的先后顺序。
 
 1. 你可以使用它去拦截一个特定的request，然后返回一个新的request，意味着你可以改变它访问的目标地址和参数等等。
 2. 你可以使用它去拦截一个特定的request，然后返回一个新的`URLResponse`和`Data`，意味着你可以返回一个自定义Response，比如Mock数据等操作。
