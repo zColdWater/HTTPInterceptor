@@ -16,6 +16,17 @@ The project is calling apple private api, in order to intercept the WKWebView se
 If it helps you, plesae give the project a little stars ✨ is the best support for me.
 If you have any questions, please submit issue for me. Your issues are the best feedback for me.
 
+## About HTTPInterceptor
+HTTPInterceptor 是一个iOS网络请求拦截器，它可以拦截基于URLSession和NSURLConnection发出的HTTP(s)请求。
+HTTPInterceptor is an iOS network request interceptor that intercepts HTTP(s) requests made by URLSession and NSURLConnection.
+
+1. 你可以使用它去拦截一个特定的request，然后返回一个新的request，意味着你可以改变它访问的目标地址和参数等等。
+2. 你可以使用它去拦截一个特定的request，然后返回一个新的URLResponse和Data，意味着你可以返回一个自定义Response，比如Mock数据等操作。
+3. 你可以使用它去拦截一个特定的request，然后返回一个URLSessionTaskMetrics，意味着你可以得到这个Request创建的请求Task的性能指标，比如创建Task，DNSLookup，Establish链接，各项指标，用于数据上报等。
+
+1. You can intercept a specific request and return a new one.
+2. It can intercept a specific request and return a specific response and data.
+3. It can also intercept a specific request and callback the URLSessionTaskMetrics object.
 
 ## About Name
 The `HttpInterceptor` name is taken by someone else, so use `BestHttpInterceptor`.
@@ -129,6 +140,7 @@ let condition = HttpIntercepCondition(schemeType: .all) { (request) -> Bool in
     return true
 }
 ```
+
 2.New a interceptor instance
 ```swift
 let interceptor = HttpInterceptor(condition: condition, delegate: self)    
