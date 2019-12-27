@@ -17,11 +17,11 @@ If it helps you, plesae give the project a little stars ✨ is the best support 
 If you have any questions, please submit issue for me. Your issues are the best feedback for me.
 
 ## About HTTPInterceptor
-HTTPInterceptor 是一个iOS网络请求拦截器，它可以拦截基于URLSession和NSURLConnection发出的HTTP(s)请求。
+HTTPInterceptor 是一个iOS网络请求拦截器，它可以拦截基于`URLSession`和`NSURLConnection`发出的HTTP(s)请求。
 
 1. 你可以使用它去拦截一个特定的request，然后返回一个新的request，意味着你可以改变它访问的目标地址和参数等等。
-2. 你可以使用它去拦截一个特定的request，然后返回一个新的URLResponse和Data，意味着你可以返回一个自定义Response，比如Mock数据等操作。
-3. 你可以使用它去拦截一个特定的request，然后返回一个URLSessionTaskMetrics，意味着你可以得到这个Request创建的请求Task的性能指标，比如创建Task，DNSLookup，Establish链接，各项指标，用于数据上报等。
+2. 你可以使用它去拦截一个特定的request，然后返回一个新的`URLResponse`和`Data`，意味着你可以返回一个自定义Response，比如Mock数据等操作。
+3. 你可以使用它去拦截一个特定的request，然后返回一个`URLSessionTaskMetrics`，意味着你可以得到这个Request创建的请求Task的性能指标，比如创建Task，DNSLookup，Establish链接，各项指标，用于数据上报等。
 
 HTTPInterceptor is an iOS network request interceptor that intercepts HTTP(s) requests made by URLSession and NSURLConnection.
 
@@ -30,6 +30,13 @@ HTTPInterceptor is an iOS network request interceptor that intercepts HTTP(s) re
 3. It can also intercept a specific request and callback the URLSessionTaskMetrics object.
 
 ## About WKWebView
+HTTPInterceptor 虽然可以拦截WKWebView中的网络请求，但是却无法得到`POST`请求的`HTTPBody`。
+因为去拦截WKWebView中的网络请求，HTTPInterceptor 使用了苹果私有API，这是不安全的，也是不应该的，但是如果你是`Debug`下使用它，这就另当别论了。 
+
+关于如何得到，WKWebView中`POST`请求的`HTTPBody`，我看了一些文章。
+例如: WKWebView注入JS脚本，JS脚本Hook所有的`XHR`和`Fetch`网络请求，然后再通过Native和Web通信通道，比如在WK容器中，JS使用`alert`方法，`prompt`方法，都可以将JS侧的内容发送给Native，Native再去保存，等等。
+
+可以看到的是这样的逻辑实在有些麻烦，而且需要考虑的东西非常多，因为你是`Hook`了JS的请求入口，这是一个block操作，稍有不慎就会给H5带来线上灾难，而且全部是因为要拿一个`HTTPBody`，所以我认为这是非常不值得的， 为了程序的鲁棒性也不应该使用这样的实现。 
 
 
 
