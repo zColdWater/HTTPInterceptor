@@ -1,5 +1,3 @@
-import UIKit
-
 @objc public enum InterceptSchemeType: NSInteger {
     case https = 0
     case http

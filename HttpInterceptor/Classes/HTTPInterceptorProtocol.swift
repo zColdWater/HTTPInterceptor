@@ -1,11 +1,22 @@
-import UIKit
-
 fileprivate let HTTPInterceptorProtocolKey = "HTTPInterceptorProtocolKey"
 
 @objc public class HTTPInterceptorProtocol: URLProtocol {
     
     private var requestTask: URLSessionTask?
     static var interceptorMap: [String: HttpInterceptor] = [:]
+    
+    /// Mocker exist ?
+    var mocker: HttpMocker? {
+        var result: HttpMocker? = nil
+        HTTPInterceptorProtocol.matchInterceptor(request: self.request) { interceptor in
+            if let mocker = interceptor.mockerDelegate?.httpMocker(request: self.request) {
+                result = mocker
+                // 找到第一个满足要求的Mocker就应该跳出循环。
+                return
+            }
+        }
+        return result
+    }
     
     override public class func canInit(with request: URLRequest) -> Bool {
         return shouldHandle(request: request)
@@ -16,10 +27,14 @@ fileprivate let HTTPInterceptorProtocolKey = "HTTPInterceptorProtocolKey"
     }
     
     override public func startLoading() {
-        let configuration = URLSessionConfiguration.default
-        let session = URLSession(configuration: configuration, delegate: self, delegateQueue: nil)
-        requestTask = session.dataTask(with: self.request)
-        requestTask?.resume()
+        if let mocker = self.mocker {
+            loadingMocker(mocker: mocker)
+        } else {
+            let configuration = URLSessionConfiguration.default
+            let session = URLSession(configuration: configuration, delegate: self, delegateQueue: nil)
+            requestTask = session.dataTask(with: self.request)
+            requestTask?.resume()
+        }
     }
     
     override public func stopLoading() {
@@ -28,6 +43,29 @@ fileprivate let HTTPInterceptorProtocolKey = "HTTPInterceptorProtocolKey"
     
 }
 
+// For Mock
+extension HTTPInterceptorProtocol {
+    
+    func loadingMocker(mocker: HttpMocker) {
+        guard let url = self.request.url,
+              let response = HTTPURLResponse(url: url, statusCode: mocker.statusCode, httpVersion: mocker.httpVersionString, headerFields: mocker.headerFields) else {
+            assertionFailure("The request URL, Can't be nil")
+            return
+        }
+        let data = mocker.mockData
+        if let redirectLocation = data.redirectLocation {
+            self.client?.urlProtocol(self, wasRedirectedTo: URLRequest(url: redirectLocation), redirectResponse: response)
+        } else {
+            self.client?.urlProtocol(self, didReceive: response, cacheStoragePolicy: .notAllowed)
+            self.client?.urlProtocol(self, didLoad: data)
+            self.client?.urlProtocolDidFinishLoading(self)
+        }
+    }
+    
+}
+
+
+// For Intercept
 extension HTTPInterceptorProtocol {
     
     class func canInterceptRequest(request: URLRequest, interceptors: [HttpInterceptor]) -> Bool {
@@ -82,7 +120,7 @@ extension HTTPInterceptorProtocol {
     class func handleRequest(request: URLRequest) -> URLRequest {
         var finalRequest: URLRequest = request
         HTTPInterceptorProtocol.matchInterceptor(request: request) { interceptor in
-            if let r = interceptor.delegate?.httpRequest?(request: request) {
+            if let r = interceptor.interceptorDelegate?.httpRequest?(request: request) {
                 finalRequest = r
             }
         }
@@ -99,7 +137,7 @@ extension HTTPInterceptorProtocol: URLSessionDataDelegate {
         // 如果有多个拦截器，同时拦截了这个response，返回最后设置拦截response。
         var newResponse = response
         HTTPInterceptorProtocol.matchInterceptor(request: self.request) { interceptor in
-            if let httpResponse = interceptor.delegate?.httpRequest?(response: response) {
+            if let httpResponse = interceptor.interceptorDelegate?.httpRequest?(response: response) {
                 newResponse = httpResponse
             }
         }
@@ -115,7 +153,7 @@ extension HTTPInterceptorProtocol: URLSessionDataDelegate {
     public func urlSession(_ session: URLSession, dataTask: URLSessionDataTask, didReceive data: Data) {
         var newData: Data = data
         HTTPInterceptorProtocol.matchInterceptor(request: self.request) { interceptor in
-            if let d = interceptor.delegate?.httpRequest?(request: self.request, data: data) {
+            if let d = interceptor.interceptorDelegate?.httpRequest?(request: self.request, data: data) {
                 newData = d
             }
         }
@@ -124,7 +162,7 @@ extension HTTPInterceptorProtocol: URLSessionDataDelegate {
     
     public func urlSession(_ session: URLSession, task: URLSessionTask, didCompleteWithError error: Error?) {
         HTTPInterceptorProtocol.matchInterceptor(request: self.request) { interceptor in
-            interceptor.delegate?.httpRequest?(request: self.request, didCompleteWithError: error)
+            interceptor.interceptorDelegate?.httpRequest?(request: self.request, didCompleteWithError: error)
         }
         if let e = error {
             self.client?.urlProtocol(self, didFailWithError: e)
@@ -145,7 +183,7 @@ extension HTTPInterceptorProtocol: URLSessionDataDelegate {
     
     public func urlSession(_ session: URLSession, task: URLSessionTask, didFinishCollecting metrics: URLSessionTaskMetrics) {
         HTTPInterceptorProtocol.matchInterceptor(request: self.request) { interceptor in
-            interceptor.delegate?.httpRequest?(request: self.request, didFinishCollecting: metrics)
+            interceptor.interceptorDelegate?.httpRequest?(request: self.request, didFinishCollecting: metrics)
         }
     }
     
@@ -185,5 +223,19 @@ extension URLRequest {
             print(error.localizedDescription)
             return nil
         }
+    }
+}
+
+private extension Data {
+    /// Returns the redirect location from the raw HTTP response if exists.
+    var redirectLocation: URL? {
+        let locationComponent = String(data: self, encoding: String.Encoding.utf8)?.components(separatedBy: "\n").first(where: { (value) -> Bool in
+            return value.contains("Location:")
+        })
+        
+        guard let redirectLocationString = locationComponent?.components(separatedBy: "Location:").last, let redirectLocation = URL(string: redirectLocationString.trimmingCharacters(in: NSCharacterSet.whitespaces)) else {
+            return nil
+        }
+        return redirectLocation
     }
 }

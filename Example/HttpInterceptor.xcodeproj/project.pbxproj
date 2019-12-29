@@ -23,6 +23,15 @@
 		4FEF483623B85C4200E62740 /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEF483523B85C4200E62740 /* Enum.swift */; };
 		4FEF483923B8A81600E62740 /* MockerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEF483723B8A81600E62740 /* MockerViewController.swift */; };
 		4FEF483A23B8A81600E62740 /* MockerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FEF483823B8A81600E62740 /* MockerViewController.xib */; };
+		4FEF484223B8DD2900E62740 /* MockerTemplateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEF484023B8DD2900E62740 /* MockerTemplateViewController.swift */; };
+		4FEF484323B8DD2900E62740 /* MockerTemplateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FEF484123B8DD2900E62740 /* MockerTemplateViewController.xib */; };
+		4FEF484723B8E09D00E62740 /* mock_jpg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4FEF484423B8E09D00E62740 /* mock_jpg.jpg */; };
+		4FEF484823B8E09D00E62740 /* mock_gif.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4FEF484523B8E09D00E62740 /* mock_gif.gif */; };
+		4FEF484923B8E09D00E62740 /* mock_png.png in Resources */ = {isa = PBXBuildFile; fileRef = 4FEF484623B8E09D00E62740 /* mock_png.png */; };
+		4FEF484D23B8EEBF00E62740 /* mock_json.json in Resources */ = {isa = PBXBuildFile; fileRef = 4FEF484C23B8EEBF00E62740 /* mock_json.json */; };
+		4FEF484F23B8F17400E62740 /* UIImage+Gif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEF484E23B8F17400E62740 /* UIImage+Gif.swift */; };
+		4FEF485223B8F31000E62740 /* mock_html.html in Resources */ = {isa = PBXBuildFile; fileRef = 4FEF485023B8F31000E62740 /* mock_html.html */; };
+		4FEF485323B8F31000E62740 /* mock_pdf.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 4FEF485123B8F31000E62740 /* mock_pdf.pdf */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
@@ -63,6 +72,15 @@
 		4FEF483523B85C4200E62740 /* Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enum.swift; sourceTree = "<group>"; };
 		4FEF483723B8A81600E62740 /* MockerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockerViewController.swift; sourceTree = "<group>"; };
 		4FEF483823B8A81600E62740 /* MockerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MockerViewController.xib; sourceTree = "<group>"; };
+		4FEF484023B8DD2900E62740 /* MockerTemplateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockerTemplateViewController.swift; sourceTree = "<group>"; };
+		4FEF484123B8DD2900E62740 /* MockerTemplateViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MockerTemplateViewController.xib; sourceTree = "<group>"; };
+		4FEF484423B8E09D00E62740 /* mock_jpg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = mock_jpg.jpg; sourceTree = "<group>"; };
+		4FEF484523B8E09D00E62740 /* mock_gif.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = mock_gif.gif; sourceTree = "<group>"; };
+		4FEF484623B8E09D00E62740 /* mock_png.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mock_png.png; sourceTree = "<group>"; };
+		4FEF484C23B8EEBF00E62740 /* mock_json.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mock_json.json; sourceTree = "<group>"; };
+		4FEF484E23B8F17400E62740 /* UIImage+Gif.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Gif.swift"; sourceTree = "<group>"; };
+		4FEF485023B8F31000E62740 /* mock_html.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = mock_html.html; sourceTree = "<group>"; };
+		4FEF485123B8F31000E62740 /* mock_pdf.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = mock_pdf.pdf; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* HttpInterceptor_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HttpInterceptor_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -103,6 +121,7 @@
 		4FEF483423B85BD100E62740 /* Template */ = {
 			isa = PBXGroup;
 			children = (
+				4FEF483F23B8DAF900E62740 /* MockAssets */,
 				4FC267E023B06F1B00973118 /* WKViewController.swift */,
 				4FC267E123B06F1B00973118 /* WKViewController.xib */,
 				4FC267E623B0743F00973118 /* UIWebViewController.swift */,
@@ -116,8 +135,24 @@
 				4FD67AE423B1DEE30055E09E /* SessionManager.swift */,
 				4FEF483723B8A81600E62740 /* MockerViewController.swift */,
 				4FEF483823B8A81600E62740 /* MockerViewController.xib */,
+				4FEF484023B8DD2900E62740 /* MockerTemplateViewController.swift */,
+				4FEF484123B8DD2900E62740 /* MockerTemplateViewController.xib */,
+				4FEF484E23B8F17400E62740 /* UIImage+Gif.swift */,
 			);
 			path = Template;
+			sourceTree = "<group>";
+		};
+		4FEF483F23B8DAF900E62740 /* MockAssets */ = {
+			isa = PBXGroup;
+			children = (
+				4FEF485023B8F31000E62740 /* mock_html.html */,
+				4FEF485123B8F31000E62740 /* mock_pdf.pdf */,
+				4FEF484C23B8EEBF00E62740 /* mock_json.json */,
+				4FEF484523B8E09D00E62740 /* mock_gif.gif */,
+				4FEF484423B8E09D00E62740 /* mock_jpg.jpg */,
+				4FEF484623B8E09D00E62740 /* mock_png.png */,
+			);
+			path = MockAssets;
 			sourceTree = "<group>";
 		};
 		607FACC71AFB9204008FA782 = {
@@ -301,11 +336,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
+				4FEF484D23B8EEBF00E62740 /* mock_json.json in Resources */,
+				4FEF484923B8E09D00E62740 /* mock_png.png in Resources */,
+				4FEF484723B8E09D00E62740 /* mock_jpg.jpg in Resources */,
+				4FEF485323B8F31000E62740 /* mock_pdf.pdf in Resources */,
 				4FEF483A23B8A81600E62740 /* MockerViewController.xib in Resources */,
+				4FEF485223B8F31000E62740 /* mock_html.html in Resources */,
 				4FC267ED23B0B72500973118 /* URLSessionViewController.xib in Resources */,
 				4FD67ADE23B1016E0055E09E /* TableLabelViewCell.xib in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
 				4FC267E323B06F1B00973118 /* WKViewController.xib in Resources */,
+				4FEF484823B8E09D00E62740 /* mock_gif.gif in Resources */,
+				4FEF484323B8DD2900E62740 /* MockerTemplateViewController.xib in Resources */,
 				4FC267E923B0743F00973118 /* UIWebViewController.xib in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
 			);
@@ -391,8 +433,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				4FEF483923B8A81600E62740 /* MockerViewController.swift in Sources */,
+				4FEF484223B8DD2900E62740 /* MockerTemplateViewController.swift in Sources */,
 				4FD67AE323B120C60055E09E /* URLSessionViewController+HttpInterceptor.swift in Sources */,
 				4FC267EC23B0B72500973118 /* URLSessionViewController.swift in Sources */,
+				4FEF484F23B8F17400E62740 /* UIImage+Gif.swift in Sources */,
 				4FD67AE523B1DEE30055E09E /* SessionManager.swift in Sources */,
 				4FD67AE123B11ED00055E09E /* ContentTypeEnum.swift in Sources */,
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,

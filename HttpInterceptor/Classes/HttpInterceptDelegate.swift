@@ -1,5 +1,3 @@
-import UIKit
-
 /// `HttpInterceptDelegate` Intercept delegate
 /// Various stages of network request interception, including rewriting URLRequest, rewriting URLResponse, rewriting Data, request completion ...
 /// `HttpInterceptDelegate` 拦截器代理
