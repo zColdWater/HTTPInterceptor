@@ -20,9 +20,7 @@ class WKViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "WKWebViewController"
-        
         registerInterceptor()
-        
         let url = URL(string: "https://www.baidu.com/")
         webview.load(URLRequest(url: url!))
     }
@@ -44,7 +42,7 @@ class WKViewController: UIViewController {
                 return false
             }
         }
-        interceptor = HttpInterceptor(condition: condition, delegate: self)
+        interceptor = HttpInterceptor(condition: condition, interceptorDelegate: self)
         interceptor?.register()
     }
     

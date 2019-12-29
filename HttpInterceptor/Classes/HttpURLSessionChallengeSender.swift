@@ -1,5 +1,3 @@
-import UIKit
-
 class HttpURLSessionChallengeSender: NSObject, URLAuthenticationChallengeSender {
     
     var sessionCompletionHandler: (URLSession.AuthChallengeDisposition, URLCredential?) -> Void

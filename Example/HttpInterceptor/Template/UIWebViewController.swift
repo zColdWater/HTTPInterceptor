@@ -57,7 +57,7 @@ class UIWebViewController: UIViewController {
                 return false
             }
         }
-        interceptor = HttpInterceptor(condition: condition, delegate: self)
+        interceptor = HttpInterceptor(condition: condition, interceptorDelegate: self)
         interceptor?.register()
     }
 

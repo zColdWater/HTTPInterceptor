@@ -7,7 +7,7 @@ extension URLSessionViewController {
         let condition = HttpIntercepCondition(schemeType: .all) { (request) -> Bool in
             return true
         }
-        interceptor = HttpInterceptor(condition: condition, delegate: self)
+        interceptor = HttpInterceptor(condition: condition, interceptorDelegate: self)
         interceptor?.register()
     }
     
