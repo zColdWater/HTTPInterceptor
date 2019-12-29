@@ -18,6 +18,9 @@ If it helps you, plesae give the project a little stars ✨ is the best support 
 If you have any questions, please submit issue for me. Your issues are the best feedback for me.
 
 ## About HTTPInterceptor
+新:  我为HTTPInterceptor新增了 Mock Data 的功能，API 非常简单清晰，使用非常方便。
+I've added Mock Data functionality to Interceptor, and the API is simple and clear. It's very easy to use.
+
 HTTPInterceptor 是一个iOS网络请求拦截器，它可以拦截基于`URLSession`和`NSURLConnection`发出的HTTP(s)请求。
 对于已经使用过URLProtocol的项目来说，如果`HTTPInterceptor`和其他`URLProtocol` Handle的URL一样，就要看注入的先后顺序。
 
@@ -50,8 +53,92 @@ The `HttpInterceptor` name is taken by someone else, so use `BestHttpInterceptor
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
+
+### 一，Mock Data (Mock数据)
 <div>
-<img style="float: left;" src="http://47.99.237.180:2088/files/f689553368e1ced61ce4c1932757f71a" width="200" height="400" />
+<img style="float: left;" src="http://47.99.237.180:2088/files/bf930163e01042dec34541ee6bb0d317" width="200" height="400" />
+
+<img style="float: left;" src="http://47.99.237.180:2088/files/46b81ac98c69a9f13f2ec381e1da2a8e" width="200" height="400" />
+
+<img style="float: left;" src="http://47.99.237.180:2088/files/b15d01f6096bbfe8a5421bfcc5452b12" width="200" height="400" />
+
+<img style="float: left;" src="http://47.99.237.180:2088/files/c410db7a84b276cfe814cf9e383dc8f2" width="200" height="400" />
+
+<img style="float: left;" src="http://47.99.237.180:2088/files/55be78d072a15b6d4cab4759fe83d2be" width="200" height="400" />
+
+<img style="float: left;" src="http://47.99.237.180:2088/files/908e1d787e225e9866b0dce2cd656903" width="200" height="400" />
+
+<img style="float: left;" src="http://47.99.237.180:2088/files/781f82e14f3ab0cf2e1770f7fffb5369" width="200" height="400" />
+
+</div>
+
+1.注册拦截条件
+```swift
+import BestHttpInterceptor
+let jsonURL: URL = URL(string: "https://mocker.example.com/json?arg1=1234567890")!
+
+class MockerTemplateViewController: UIViewController {
+    
+    var interceptor: HttpInterceptor!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        registerInterceptor()
+        doTask()
+    }
+    
+    deinit {
+        print("MockerTemplateViewController deinit")
+        interceptor.unregister()
+    }
+    
+    func registerInterceptor() {
+        let condition = HttpIntercepCondition.init(schemeType: .all) { (request) -> Bool in
+            if let url = request.url, URLS.contains(url) {
+                return true
+            }
+            return false
+        }
+        interceptor = HttpInterceptor(condition: condition, mockerDelegate: self)
+        interceptor.register()
+    }
+    
+    func doTask() {
+        URLSession.shared.dataTask(with: jsonURL) { (data, response, error) in
+            if let e = error {
+                print("e:\(e)")
+            } else {
+                let jsonStr = String(data: data!, encoding: .utf8)
+                DispatchQueue.main.async {
+                    self.contentLabel.text = jsonStr
+                }
+            }
+        }.resume()
+    }
+}
+```
+
+2.实现 **HttpMockerDelegate** 代理
+```swift
+extension MockerTemplateViewController: HttpMockerDelegate {
+    func httpMocker(request: URLRequest) -> HttpMocker {
+        guard let url = request.url else { fatalError() }
+        switch url {
+        case jsonURL:
+            let jsonUrl = Bundle(for: MockerTemplateViewController.self).url(forResource: "mock_json", withExtension: "json")!
+            let mocker = HttpMocker(dataType: .json, mockData: jsonUrl.data, statusCode: 200, httpVer: .http1_1)
+            return mocker
+        default:
+            fatalError()
+        }        
+    }
+}
+```
+
+### 二，Intercept Request (拦截请求)
+
+<div>
+<img style="float: left;" src="http://47.99.237.180:2088/files/eb14aeb76f4261f66502eec0a86108ee" width="200" height="400" />
 
 <img style="float: left;" src="http://47.99.237.180:2088/files/21c6bccc5dc85983e73c09794dd48a75" width="200" height="400" />
 
@@ -112,7 +199,7 @@ class WKViewController: UIViewController {
             }
             
         }
-        interceptor = HttpInterceptor(condition: condition, delegate: self)
+        interceptor = HttpInterceptor(condition: condition, interceptorDelegate: self)
         
         // 开始注册
         interceptor?.register()
@@ -149,6 +236,8 @@ extension WKViewController: HttpInterceptDelegate {
 
 ## Usage
 
+
+### 一，Mock Data (Mock数据)
 1.Define intercept condition
 ```swift
 let condition = HttpIntercepCondition(schemeType: .all) { (request) -> Bool in
@@ -158,7 +247,46 @@ let condition = HttpIntercepCondition(schemeType: .all) { (request) -> Bool in
 
 2.New a interceptor instance
 ```swift
-let interceptor = HttpInterceptor(condition: condition, delegate: self)    
+let interceptor = HttpInterceptor(condition: condition, mockerDelegate: self)
+```
+
+3.Start register
+```swift
+interceptor.register()
+```
+
+4.Cancel register
+```swift
+interceptor.unregister()
+```
+
+5.Implement `HttpMockerDelegate` delegate,  callback to you
+```swift
+extension MockerTemplateViewController: HttpMockerDelegate {
+
+    // 例子
+    // Example
+    func httpMocker(request: URLRequest) -> HttpMocker {
+        let jsonUrl = Bundle(for: MockerTemplateViewController.self).url(forResource: "mock_json", withExtension: "json")!
+        let mocker = HttpMocker(dataType: .json, mockData: jsonUrl.data, statusCode: 200, httpVer: .http1_1)
+        return mocker
+    }
+}
+```
+
+
+### 二，Intercept Request (拦截请求)
+
+1.Define intercept condition
+```swift
+let condition = HttpIntercepCondition(schemeType: .all) { (request) -> Bool in
+    return true
+}
+```
+
+2.New a interceptor instance
+```swift
+let interceptor = HttpInterceptor(condition: condition, interceptorDelegate: self)
 ```
 
 3.Start register
