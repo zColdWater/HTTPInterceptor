@@ -1,131 +1,13 @@
 import UIKit
 
-enum DemoSectionType: Int {
-    case webview = 0
-    case urlsession
-    case urlconnection
-    
-    func getName() -> String {
-        switch self {
-        case .webview:
-            return "WebView"
-        case .urlsession:
-            return "URLSession"
-        case .urlconnection:
-            return "NSURLConnection"
-        }
-    }
-}
-
-enum DemoRowType: Int {
-    
-    static var identifier: String { return "interceptor-demo" }
-    case wkwebview = 0
-    case uiwebview
-    case urlsession_get
-    case urlsession_post
-    case urlsession_download
-    case urlconnection_get
-    case urlconnection_post
-    case urlconnection_download
-    
-    func getName() -> String {
-        switch self {
-        case .uiwebview:
-            return "拦截 UIWebView 中的 HTTP/HTTPS 请求"
-        case .wkwebview:
-            return "拦截 WKWebView 中的 HTTP/HTTPS 请求"
-        case .urlconnection_get:
-            return "拦截 URLConnection 发起的 GET 请求"
-        case .urlconnection_post:
-            return "拦截 URLConnection 发起的 POST 请求"
-        case .urlconnection_download:
-            return "拦截 URLConnection 发起的 DOWNLOAD 请求"
-        case .urlsession_get:
-            return "拦截 URLSession 发起的 GET 请求"
-        case .urlsession_post:
-            return "拦截 URLSession 发起的 POST 请求"
-        case .urlsession_download:
-            return "拦截 URLSession 发起的 DOWNLOAD 请求"
-        }
-    }
-    
-    func getDescription() -> String {
-        switch self {
-        case .uiwebview:
-            return "拦截UIWebView中所有的 png, svg, jpeg, gif 结尾的链接，替换成自定义资源链接。 测试链接 "
-        case .wkwebview:
-            return "拦截WKWebView中所有的 png, svg, jpeg, gif 结尾的链接，替换成自定义资源链接。"
-        case .urlconnection_get:
-            return "拦截网络GET请求"
-        case .urlconnection_post:
-            return "拦截网络POST请求"
-        case .urlconnection_download:
-            return "拦截网络DOWNLOAD请求"
-        case .urlsession_get:
-            return "拦截网络GET请求"
-        case .urlsession_post:
-            return "拦截网络POST请求"
-        case .urlsession_download:
-            return "拦截网络DOWNLOAD请求"
-        }
-    }
-    
-    func todo(viewController: UIViewController) {
-        switch self {
-        case .uiwebview:
-            let vc = UIWebViewController()
-            viewController.navigationController?.pushViewController(vc, animated: true)
-            return
-        case .wkwebview:
-            let vc = WKViewController()
-            viewController.navigationController?.pushViewController(vc, animated: true)
-            return
-        case .urlconnection_get:
-            let vc = URLSessionViewController()
-            vc.requestType = .nsurlconnection_get
-            viewController.navigationController?.pushViewController(vc, animated: true)
-            return
-        case .urlconnection_post:
-            let vc = URLSessionViewController()
-            vc.requestType = .nsurlconnection_post
-            viewController.navigationController?.pushViewController(vc, animated: true)
-            return
-        case .urlconnection_download:
-            let vc = URLSessionViewController()
-            vc.requestType = .nsurlconnection_download
-            viewController.navigationController?.pushViewController(vc, animated: true)
-            return
-        case .urlsession_get:
-            let vc = URLSessionViewController()
-            vc.requestType = .urlsession_get
-            viewController.navigationController?.pushViewController(vc, animated: true)
-            return
-        case .urlsession_post:
-            let vc = URLSessionViewController()
-            vc.requestType = .urlsession_post
-            viewController.navigationController?.pushViewController(vc, animated: true)
-            return
-        case .urlsession_download:
-            let vc = URLSessionViewController()
-            vc.requestType = .urlsession_download
-            viewController.navigationController?.pushViewController(vc, animated: true)
-            return
-        }
-    }
-    
-    static func getDemoType(index: Int) -> DemoRowType? {
-        return DemoRowType(rawValue: index)
-    }
-}
-
 class ViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
 
     var dataSource: [DemoSectionType: [DemoRowType]] = [.webview: [.uiwebview,.wkwebview],
-                                                        .urlsession: [.urlsession_get,.urlsession_post,.urlsession_download],
-                                                        .urlconnection: [.urlconnection_get,.urlconnection_post,.urlconnection_download]]
+                                                        .urlsession: [.urlsessionGet,.urlsessionPost,.urlsessionDownload],
+                                                        .urlconnection: [.urlconnectionGet,.urlconnectionPost,.urlconnectionDownload],
+                                                        .mock:[.mockData]]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -164,6 +46,8 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
                 return dataSource[.urlsession]!.count
             case .urlconnection:
                 return dataSource[.urlconnection]!.count
+            case .mock:
+                return dataSource[.mock]!.count
         }
     }
     

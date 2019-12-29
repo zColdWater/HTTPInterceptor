@@ -8,21 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		0353F37B7E839778F867C4622D36F11E /* Pods-HttpInterceptor_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F794108612120E311706C3D655D911 /* Pods-HttpInterceptor_Tests-dummy.m */; };
+		09863F076A72012443908865D90FEB6E /* NSURLSession+Interceptor.h in Headers */ = {isa = PBXBuildFile; fileRef = DB0078EEB952B062D29CB05589096577 /* NSURLSession+Interceptor.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0A10C24DA4EE5D56808B1EB365C29C61 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
-		11D0105A24092590F8055D9642A9BBCE /* HttpURLSessionChallengeSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6682698D5C010EB73A7AE874A3D662 /* HttpURLSessionChallengeSender.swift */; };
-		26D8490C0E30D37B59BAC31EE1542125 /* NSURLSession+Interceptor.m in Sources */ = {isa = PBXBuildFile; fileRef = AE6EF314A53FF9F385223AD39883768F /* NSURLSession+Interceptor.m */; };
-		30B31A1851657616D67DA30667F9A3A2 /* BestHttpInterceptor-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AFE287DE819286F5ADD6DBEBAF33FFC /* BestHttpInterceptor-dummy.m */; };
-		417BA0E64214BF3F9792CD0144F9E968 /* BestHttpInterceptor-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4526C5E3FF9BC457B680E6E6E71B2BE4 /* BestHttpInterceptor-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1CAB445F5F41B3E6BFE863307D622DF8 /* HttpInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB91C0B3548DE8C17D70E631FD62051D /* HttpInterceptor.swift */; };
+		23047B7AE018441AC96526B3C3CEE372 /* HttpIntercepCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = C24A4D73A85F410A59E848683F4F4C7D /* HttpIntercepCondition.swift */; };
+		4064FD7EB5132FB865CAA1DB8E262E5C /* HttpURLSessionChallengeSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B6B654927DB951B0A3F7F638E4C474 /* HttpURLSessionChallengeSender.swift */; };
 		4486EF4CBE164C21C4CFA9A5AAD44164 /* Pods-HttpInterceptor_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B7865F17E8580F08F9462D4DC49824F2 /* Pods-HttpInterceptor_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		481A1D3D0F5A8706507E63FB1671815E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
-		59E1E079C34A478F87A6F4E10320B29D /* HttpInterceptDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EDBEEA4EB9CC94D73D14AC82E1DC3B /* HttpInterceptDelegate.swift */; };
+		51A29359FDAB1FB5AE7DF639414A103F /* HttpInterceptDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20512D219C5793C907900D778AB50F48 /* HttpInterceptDelegate.swift */; };
 		5F70B79A2F8C117D5B0DE25BF85B190A /* Pods-HttpInterceptor_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B0B8F81C1F339B47B289688AB5C8633 /* Pods-HttpInterceptor_Example-dummy.m */; };
-		62ED5DBDF107BFFD5AEDD252D7F2E868 /* NSURLSession+Interceptor.h in Headers */ = {isa = PBXBuildFile; fileRef = 4DDF453D9074384D78780FA20C3DEBCB /* NSURLSession+Interceptor.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A131E137A11048231BA346468B7B5D69 /* HTTPInterceptorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36602F908C6CA541400E342B8E356C7 /* HTTPInterceptorProtocol.swift */; };
+		6115DB3D409F8552929E733B349E946C /* HTTPInterceptorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 063A88D8E691042EDBA09465CF441FF5 /* HTTPInterceptorProtocol.swift */; };
+		6462CB304C139BEB0C2DE46174715E6F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		68097B2F000DCEE06E48342B553C4EF0 /* BestHttpInterceptor-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E98206D63CB0ACA97F7976B4CAB85D60 /* BestHttpInterceptor-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A02103E0430B00EC8681CB8AC0735114 /* HttpMockerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8535183E9DF6E9205B8B70ED503F6EC /* HttpMockerDelegate.swift */; };
 		BDE6D25F5AEEF75F19F7CC7E0270B5F7 /* Pods-HttpInterceptor_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 99BC8FDB61F11CFAD32771ACF869B1C5 /* Pods-HttpInterceptor_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CD22E86CD07A0D58D95019D78B1EF0A4 /* HttpInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7DC09BDFEF39A4F5025413D66B1F3B2 /* HttpInterceptor.swift */; };
-		EC8C843FC9F3087828F16DBAF41BB4CA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
-		FBF8AB74E434180FB3E0069CB5E84FA8 /* HttpIntercepCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861E948B70C7E8A4F9069AE8CB718084 /* HttpIntercepCondition.swift */; };
+		C3ABA5D09BA00F0C408E4E0808D99CDF /* BestHttpInterceptor-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F1496AAA812EE12F868B53801F42134 /* BestHttpInterceptor-dummy.m */; };
+		CE746D0D35C59972BCA6C84708104987 /* NSURLSession+Interceptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 437D3B7511D5221B4FE019F1C355BC78 /* NSURLSession+Interceptor.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,60 +44,61 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		055A26E772E6ADF1AC1A4153F6E3F2A0 /* BestHttpInterceptor.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = BestHttpInterceptor.modulemap; sourceTree = "<group>"; };
-		0A48299AD073EF50421D2943F961255B /* BestHttpInterceptor.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = BestHttpInterceptor.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		0B4A31A1F77E74BE02307A77D5B4D080 /* BestHttpInterceptor-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BestHttpInterceptor-prefix.pch"; sourceTree = "<group>"; };
+		00C0054F1EEEED653A0623B1C5870970 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		063A88D8E691042EDBA09465CF441FF5 /* HTTPInterceptorProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HTTPInterceptorProtocol.swift; path = HttpInterceptor/Classes/HTTPInterceptorProtocol.swift; sourceTree = "<group>"; };
+		08F99C54BFAD562DA16C3336D474D255 /* BestHttpInterceptor.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = BestHttpInterceptor.modulemap; sourceTree = "<group>"; };
+		17DC6ACEE82ABD0CA8D75C2F2A195512 /* BestHttpInterceptor-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "BestHttpInterceptor-Info.plist"; sourceTree = "<group>"; };
 		185A09B1E1CFB78185EB65CED01C8F26 /* Pods-HttpInterceptor_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-HttpInterceptor_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		194B9BD657A8ADDD92A9DB891E966A6E /* Pods_HttpInterceptor_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_HttpInterceptor_Example.framework; path = "Pods-HttpInterceptor_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		20512D219C5793C907900D778AB50F48 /* HttpInterceptDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HttpInterceptDelegate.swift; path = HttpInterceptor/Classes/HttpInterceptDelegate.swift; sourceTree = "<group>"; };
+		20B6B654927DB951B0A3F7F638E4C474 /* HttpURLSessionChallengeSender.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HttpURLSessionChallengeSender.swift; path = HttpInterceptor/Classes/HttpURLSessionChallengeSender.swift; sourceTree = "<group>"; };
 		3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		38A7DD00AA2BDAB027A86577A1D29647 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		3935B796C82FD0FD93A5D00718B58592 /* BestHttpInterceptor-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BestHttpInterceptor-prefix.pch"; sourceTree = "<group>"; };
 		4151373C72C25E65CD4625CFA0C24543 /* Pods-HttpInterceptor_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-HttpInterceptor_Example.modulemap"; sourceTree = "<group>"; };
-		44C9D8CB7741BAAAC9D6CFA4862F0E10 /* BestHttpInterceptor-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "BestHttpInterceptor-Info.plist"; sourceTree = "<group>"; };
-		4526C5E3FF9BC457B680E6E6E71B2BE4 /* BestHttpInterceptor-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BestHttpInterceptor-umbrella.h"; sourceTree = "<group>"; };
-		4DDF453D9074384D78780FA20C3DEBCB /* NSURLSession+Interceptor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSURLSession+Interceptor.h"; path = "HttpInterceptor/Classes/NSURLSession+Interceptor.h"; sourceTree = "<group>"; };
+		437D3B7511D5221B4FE019F1C355BC78 /* NSURLSession+Interceptor.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSURLSession+Interceptor.m"; path = "HttpInterceptor/Classes/NSURLSession+Interceptor.m"; sourceTree = "<group>"; };
 		4F5F992635A3C8AB7D98E1D11B8F42A4 /* Pods-HttpInterceptor_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-HttpInterceptor_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		58B5A11A2D695E0779013411CB0C77EE /* Pods-HttpInterceptor_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-HttpInterceptor_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		5EE31AB7D5EF2B7600B9FA8EE2198BC5 /* Pods-HttpInterceptor_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-HttpInterceptor_Example-Info.plist"; sourceTree = "<group>"; };
+		5F1496AAA812EE12F868B53801F42134 /* BestHttpInterceptor-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "BestHttpInterceptor-dummy.m"; sourceTree = "<group>"; };
+		62BF3AD16463FD374367EDB019CD4553 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
 		69BCA0284AEA6DBF3992F195A69DECB1 /* Pods-HttpInterceptor_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-HttpInterceptor_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		7614A43DCCD34BFAF5A8BB0F7DAC5240 /* BestHttpInterceptor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = BestHttpInterceptor.framework; path = BestHttpInterceptor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7CCCB099FD00107C23EE9948A9FE3772 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
-		861E948B70C7E8A4F9069AE8CB718084 /* HttpIntercepCondition.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HttpIntercepCondition.swift; path = HttpInterceptor/Classes/HttpIntercepCondition.swift; sourceTree = "<group>"; };
-		8AFE287DE819286F5ADD6DBEBAF33FFC /* BestHttpInterceptor-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "BestHttpInterceptor-dummy.m"; sourceTree = "<group>"; };
 		8B0B8F81C1F339B47B289688AB5C8633 /* Pods-HttpInterceptor_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-HttpInterceptor_Example-dummy.m"; sourceTree = "<group>"; };
 		9353D619A7D1C168CBA3A67D875E35A0 /* Pods_HttpInterceptor_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_HttpInterceptor_Tests.framework; path = "Pods-HttpInterceptor_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		93F794108612120E311706C3D655D911 /* Pods-HttpInterceptor_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-HttpInterceptor_Tests-dummy.m"; sourceTree = "<group>"; };
 		99BC8FDB61F11CFAD32771ACF869B1C5 /* Pods-HttpInterceptor_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-HttpInterceptor_Tests-umbrella.h"; sourceTree = "<group>"; };
 		9A152F3A32D3E4F023B6E43FC61B634C /* Pods-HttpInterceptor_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-HttpInterceptor_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		9A6682698D5C010EB73A7AE874A3D662 /* HttpURLSessionChallengeSender.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HttpURLSessionChallengeSender.swift; path = HttpInterceptor/Classes/HttpURLSessionChallengeSender.swift; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		AE6EF314A53FF9F385223AD39883768F /* NSURLSession+Interceptor.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSURLSession+Interceptor.m"; path = "HttpInterceptor/Classes/NSURLSession+Interceptor.m"; sourceTree = "<group>"; };
-		B36602F908C6CA541400E342B8E356C7 /* HTTPInterceptorProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HTTPInterceptorProtocol.swift; path = HttpInterceptor/Classes/HTTPInterceptorProtocol.swift; sourceTree = "<group>"; };
+		A185F47D981253D779D6145953C778B7 /* BestHttpInterceptor.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = BestHttpInterceptor.xcconfig; sourceTree = "<group>"; };
 		B6E0F60D4CE99BE97B1C63724A3BC5BA /* Pods-HttpInterceptor_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-HttpInterceptor_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		B7865F17E8580F08F9462D4DC49824F2 /* Pods-HttpInterceptor_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-HttpInterceptor_Example-umbrella.h"; sourceTree = "<group>"; };
-		B7DC09BDFEF39A4F5025413D66B1F3B2 /* HttpInterceptor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HttpInterceptor.swift; path = HttpInterceptor/Classes/HttpInterceptor.swift; sourceTree = "<group>"; };
+		BB91C0B3548DE8C17D70E631FD62051D /* HttpInterceptor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HttpInterceptor.swift; path = HttpInterceptor/Classes/HttpInterceptor.swift; sourceTree = "<group>"; };
 		BDC822615085CB8CB242C1AE52CA3640 /* Pods-HttpInterceptor_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-HttpInterceptor_Example.release.xcconfig"; sourceTree = "<group>"; };
-		C1971CECD9CF7ABC5043CF3C50FD6225 /* BestHttpInterceptor.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = BestHttpInterceptor.xcconfig; sourceTree = "<group>"; };
-		C7EDBEEA4EB9CC94D73D14AC82E1DC3B /* HttpInterceptDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HttpInterceptDelegate.swift; path = HttpInterceptor/Classes/HttpInterceptDelegate.swift; sourceTree = "<group>"; };
+		C24A4D73A85F410A59E848683F4F4C7D /* HttpIntercepCondition.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HttpIntercepCondition.swift; path = HttpInterceptor/Classes/HttpIntercepCondition.swift; sourceTree = "<group>"; };
+		C8535183E9DF6E9205B8B70ED503F6EC /* HttpMockerDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HttpMockerDelegate.swift; path = HttpInterceptor/Classes/HttpMockerDelegate.swift; sourceTree = "<group>"; };
 		D5D927A7BD0A107A0439C0D37ED68555 /* Pods-HttpInterceptor_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-HttpInterceptor_Example-frameworks.sh"; sourceTree = "<group>"; };
 		D918E40AB3681BB4CB99F04AC18B4C2E /* Pods-HttpInterceptor_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-HttpInterceptor_Tests-Info.plist"; sourceTree = "<group>"; };
+		DB0078EEB952B062D29CB05589096577 /* NSURLSession+Interceptor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSURLSession+Interceptor.h"; path = "HttpInterceptor/Classes/NSURLSession+Interceptor.h"; sourceTree = "<group>"; };
 		E04B150F057AC96EBDE1F74138D7DBC6 /* Pods-HttpInterceptor_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-HttpInterceptor_Tests.modulemap"; sourceTree = "<group>"; };
 		E8CC565DBC083537DEE1FCF75C67B829 /* Pods-HttpInterceptor_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-HttpInterceptor_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		E98206D63CB0ACA97F7976B4CAB85D60 /* BestHttpInterceptor-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BestHttpInterceptor-umbrella.h"; sourceTree = "<group>"; };
+		FC239D2B240B59BA026F59A42290962B /* BestHttpInterceptor.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = BestHttpInterceptor.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		19FDA2B406B5576188AED2655308C9B8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6462CB304C139BEB0C2DE46174715E6F /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5691BF72990AB51EC63E5205319E49FF /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				481A1D3D0F5A8706507E63FB1671815E /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		57618567C8D4F0DF4BC375C19C8C782A /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				EC8C843FC9F3087828F16DBAF41BB4CA /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -111,25 +113,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		5C16BBD8FCA58AA1F3C430C5CA19A824 /* Pod */ = {
+		493DAF2F762B28E3AEE7D1A7C3BBFAA4 /* Pod */ = {
 			isa = PBXGroup;
 			children = (
-				0A48299AD073EF50421D2943F961255B /* BestHttpInterceptor.podspec */,
-				38A7DD00AA2BDAB027A86577A1D29647 /* LICENSE */,
-				7CCCB099FD00107C23EE9948A9FE3772 /* README.md */,
+				FC239D2B240B59BA026F59A42290962B /* BestHttpInterceptor.podspec */,
+				62BF3AD16463FD374367EDB019CD4553 /* LICENSE */,
+				00C0054F1EEEED653A0623B1C5870970 /* README.md */,
 			);
 			name = Pod;
 			sourceTree = "<group>";
 		};
-		7758EC30267F46DBF3514725D1C414FC /* Support Files */ = {
+		77CCDC8E007B3D939E2626B2448926D3 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				055A26E772E6ADF1AC1A4153F6E3F2A0 /* BestHttpInterceptor.modulemap */,
-				C1971CECD9CF7ABC5043CF3C50FD6225 /* BestHttpInterceptor.xcconfig */,
-				8AFE287DE819286F5ADD6DBEBAF33FFC /* BestHttpInterceptor-dummy.m */,
-				44C9D8CB7741BAAAC9D6CFA4862F0E10 /* BestHttpInterceptor-Info.plist */,
-				0B4A31A1F77E74BE02307A77D5B4D080 /* BestHttpInterceptor-prefix.pch */,
-				4526C5E3FF9BC457B680E6E6E71B2BE4 /* BestHttpInterceptor-umbrella.h */,
+				08F99C54BFAD562DA16C3336D474D255 /* BestHttpInterceptor.modulemap */,
+				A185F47D981253D779D6145953C778B7 /* BestHttpInterceptor.xcconfig */,
+				5F1496AAA812EE12F868B53801F42134 /* BestHttpInterceptor-dummy.m */,
+				17DC6ACEE82ABD0CA8D75C2F2A195512 /* BestHttpInterceptor-Info.plist */,
+				3935B796C82FD0FD93A5D00718B58592 /* BestHttpInterceptor-prefix.pch */,
+				E98206D63CB0ACA97F7976B4CAB85D60 /* BestHttpInterceptor-umbrella.h */,
 			);
 			name = "Support Files";
 			path = "Example/Pods/Target Support Files/BestHttpInterceptor";
@@ -151,6 +153,14 @@
 			path = "Target Support Files/Pods-HttpInterceptor_Tests";
 			sourceTree = "<group>";
 		};
+		A9C5C948DE516702ADA33E1B7A59FAAE /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AE8E856E2922DB6EC412CEBB9FFAC47B /* BestHttpInterceptor */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
 		ADEE63982338ACC310EBE391AD065AAC /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -161,12 +171,22 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		B57631F570BF6B74B0AF1AFF04CB8371 /* Development Pods */ = {
+		AE8E856E2922DB6EC412CEBB9FFAC47B /* BestHttpInterceptor */ = {
 			isa = PBXGroup;
 			children = (
-				DA6F66ED38BEC16AFD51B2F9DD69F099 /* BestHttpInterceptor */,
+				C24A4D73A85F410A59E848683F4F4C7D /* HttpIntercepCondition.swift */,
+				20512D219C5793C907900D778AB50F48 /* HttpInterceptDelegate.swift */,
+				BB91C0B3548DE8C17D70E631FD62051D /* HttpInterceptor.swift */,
+				063A88D8E691042EDBA09465CF441FF5 /* HTTPInterceptorProtocol.swift */,
+				C8535183E9DF6E9205B8B70ED503F6EC /* HttpMockerDelegate.swift */,
+				20B6B654927DB951B0A3F7F638E4C474 /* HttpURLSessionChallengeSender.swift */,
+				DB0078EEB952B062D29CB05589096577 /* NSURLSession+Interceptor.h */,
+				437D3B7511D5221B4FE019F1C355BC78 /* NSURLSession+Interceptor.m */,
+				493DAF2F762B28E3AEE7D1A7C3BBFAA4 /* Pod */,
+				77CCDC8E007B3D939E2626B2448926D3 /* Support Files */,
 			);
-			name = "Development Pods";
+			name = BestHttpInterceptor;
+			path = ../..;
 			sourceTree = "<group>";
 		};
 		C0834CEBB1379A84116EF29F93051C60 /* iOS */ = {
@@ -181,7 +201,7 @@
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
-				B57631F570BF6B74B0AF1AFF04CB8371 /* Development Pods */,
+				A9C5C948DE516702ADA33E1B7A59FAAE /* Development Pods */,
 				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
 				ADEE63982338ACC310EBE391AD065AAC /* Products */,
 				D389ED28FDB51FAFF060791C7D18332B /* Targets Support Files */,
@@ -205,23 +225,6 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		DA6F66ED38BEC16AFD51B2F9DD69F099 /* BestHttpInterceptor */ = {
-			isa = PBXGroup;
-			children = (
-				861E948B70C7E8A4F9069AE8CB718084 /* HttpIntercepCondition.swift */,
-				C7EDBEEA4EB9CC94D73D14AC82E1DC3B /* HttpInterceptDelegate.swift */,
-				B7DC09BDFEF39A4F5025413D66B1F3B2 /* HttpInterceptor.swift */,
-				B36602F908C6CA541400E342B8E356C7 /* HTTPInterceptorProtocol.swift */,
-				9A6682698D5C010EB73A7AE874A3D662 /* HttpURLSessionChallengeSender.swift */,
-				4DDF453D9074384D78780FA20C3DEBCB /* NSURLSession+Interceptor.h */,
-				AE6EF314A53FF9F385223AD39883768F /* NSURLSession+Interceptor.m */,
-				5C16BBD8FCA58AA1F3C430C5CA19A824 /* Pod */,
-				7758EC30267F46DBF3514725D1C414FC /* Support Files */,
-			);
-			name = BestHttpInterceptor;
-			path = ../..;
-			sourceTree = "<group>";
-		};
 		DCE5E2E81A130BD69CD26E4CE1AD96E5 /* Pods-HttpInterceptor_Example */ = {
 			isa = PBXGroup;
 			children = (
@@ -242,12 +245,12 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		46FF7FC7EF59CF28D2A225096A938EF9 /* Headers */ = {
+		32E018ACA8D9BC4B179D7F591C21B822 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				417BA0E64214BF3F9792CD0144F9E968 /* BestHttpInterceptor-umbrella.h in Headers */,
-				62ED5DBDF107BFFD5AEDD252D7F2E868 /* NSURLSession+Interceptor.h in Headers */,
+				68097B2F000DCEE06E48342B553C4EF0 /* BestHttpInterceptor-umbrella.h in Headers */,
+				09863F076A72012443908865D90FEB6E /* NSURLSession+Interceptor.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,12 +294,12 @@
 		};
 		3128B13EF0A6133A129FA4C01B98C259 /* BestHttpInterceptor */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E94851B02A01E4C6A910DD980556EC84 /* Build configuration list for PBXNativeTarget "BestHttpInterceptor" */;
+			buildConfigurationList = FBCDDE900D524889328DDE969AE05F68 /* Build configuration list for PBXNativeTarget "BestHttpInterceptor" */;
 			buildPhases = (
-				46FF7FC7EF59CF28D2A225096A938EF9 /* Headers */,
-				689FC60F89E6162FCA0A4D47FFF283EA /* Sources */,
-				57618567C8D4F0DF4BC375C19C8C782A /* Frameworks */,
-				4DAD7154A87178E0B3E51CD2C29DDB64 /* Resources */,
+				32E018ACA8D9BC4B179D7F591C21B822 /* Headers */,
+				668DDEA49FB6C50F951FF298D867954B /* Sources */,
+				19FDA2B406B5576188AED2655308C9B8 /* Frameworks */,
+				697EC78D4487913B9E683E61FD335950 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -355,7 +358,7 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		4DAD7154A87178E0B3E51CD2C29DDB64 /* Resources */ = {
+		697EC78D4487913B9E683E61FD335950 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -387,17 +390,18 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		689FC60F89E6162FCA0A4D47FFF283EA /* Sources */ = {
+		668DDEA49FB6C50F951FF298D867954B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				30B31A1851657616D67DA30667F9A3A2 /* BestHttpInterceptor-dummy.m in Sources */,
-				FBF8AB74E434180FB3E0069CB5E84FA8 /* HttpIntercepCondition.swift in Sources */,
-				59E1E079C34A478F87A6F4E10320B29D /* HttpInterceptDelegate.swift in Sources */,
-				CD22E86CD07A0D58D95019D78B1EF0A4 /* HttpInterceptor.swift in Sources */,
-				A131E137A11048231BA346468B7B5D69 /* HTTPInterceptorProtocol.swift in Sources */,
-				11D0105A24092590F8055D9642A9BBCE /* HttpURLSessionChallengeSender.swift in Sources */,
-				26D8490C0E30D37B59BAC31EE1542125 /* NSURLSession+Interceptor.m in Sources */,
+				C3ABA5D09BA00F0C408E4E0808D99CDF /* BestHttpInterceptor-dummy.m in Sources */,
+				23047B7AE018441AC96526B3C3CEE372 /* HttpIntercepCondition.swift in Sources */,
+				51A29359FDAB1FB5AE7DF639414A103F /* HttpInterceptDelegate.swift in Sources */,
+				1CAB445F5F41B3E6BFE863307D622DF8 /* HttpInterceptor.swift in Sources */,
+				6115DB3D409F8552929E733B349E946C /* HTTPInterceptorProtocol.swift in Sources */,
+				A02103E0430B00EC8681CB8AC0735114 /* HttpMockerDelegate.swift in Sources */,
+				4064FD7EB5132FB865CAA1DB8E262E5C /* HttpURLSessionChallengeSender.swift in Sources */,
+				CE746D0D35C59972BCA6C84708104987 /* NSURLSession+Interceptor.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -594,9 +598,9 @@
 			};
 			name = Release;
 		};
-		5CE81E5AC9A3EC910D6EC43BC2FC035E /* Debug */ = {
+		544F5BC6F8A678F964EF4D6399090147 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C1971CECD9CF7ABC5043CF3C50FD6225 /* BestHttpInterceptor.xcconfig */;
+			baseConfigurationReference = A185F47D981253D779D6145953C778B7 /* BestHttpInterceptor.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -627,9 +631,9 @@
 			};
 			name = Debug;
 		};
-		60AC1E029E0BE455C457DD8BD0A7F60B /* Release */ = {
+		69FC5F257CCFAC6F9D308F372F01D47F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C1971CECD9CF7ABC5043CF3C50FD6225 /* BestHttpInterceptor.xcconfig */;
+			baseConfigurationReference = A185F47D981253D779D6145953C778B7 /* BestHttpInterceptor.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -790,11 +794,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E94851B02A01E4C6A910DD980556EC84 /* Build configuration list for PBXNativeTarget "BestHttpInterceptor" */ = {
+		FBCDDE900D524889328DDE969AE05F68 /* Build configuration list for PBXNativeTarget "BestHttpInterceptor" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				5CE81E5AC9A3EC910D6EC43BC2FC035E /* Debug */,
-				60AC1E029E0BE455C457DD8BD0A7F60B /* Release */,
+				544F5BC6F8A678F964EF4D6399090147 /* Debug */,
+				69FC5F257CCFAC6F9D308F372F01D47F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

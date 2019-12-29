@@ -20,6 +20,9 @@
 		4FD67AE123B11ED00055E09E /* ContentTypeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD67AE023B11ED00055E09E /* ContentTypeEnum.swift */; };
 		4FD67AE323B120C60055E09E /* URLSessionViewController+HttpInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD67AE223B120C60055E09E /* URLSessionViewController+HttpInterceptor.swift */; };
 		4FD67AE523B1DEE30055E09E /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD67AE423B1DEE30055E09E /* SessionManager.swift */; };
+		4FEF483623B85C4200E62740 /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEF483523B85C4200E62740 /* Enum.swift */; };
+		4FEF483923B8A81600E62740 /* MockerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEF483723B8A81600E62740 /* MockerViewController.swift */; };
+		4FEF483A23B8A81600E62740 /* MockerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FEF483823B8A81600E62740 /* MockerViewController.xib */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
@@ -57,6 +60,9 @@
 		4FD67AE023B11ED00055E09E /* ContentTypeEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentTypeEnum.swift; sourceTree = "<group>"; };
 		4FD67AE223B120C60055E09E /* URLSessionViewController+HttpInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSessionViewController+HttpInterceptor.swift"; sourceTree = "<group>"; };
 		4FD67AE423B1DEE30055E09E /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
+		4FEF483523B85C4200E62740 /* Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enum.swift; sourceTree = "<group>"; };
+		4FEF483723B8A81600E62740 /* MockerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockerViewController.swift; sourceTree = "<group>"; };
+		4FEF483823B8A81600E62740 /* MockerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MockerViewController.xib; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* HttpInterceptor_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HttpInterceptor_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -94,6 +100,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4FEF483423B85BD100E62740 /* Template */ = {
+			isa = PBXGroup;
+			children = (
+				4FC267E023B06F1B00973118 /* WKViewController.swift */,
+				4FC267E123B06F1B00973118 /* WKViewController.xib */,
+				4FC267E623B0743F00973118 /* UIWebViewController.swift */,
+				4FC267E723B0743F00973118 /* UIWebViewController.xib */,
+				4FC267EA23B0B72500973118 /* URLSessionViewController.swift */,
+				4FC267EB23B0B72500973118 /* URLSessionViewController.xib */,
+				4FD67ADB23B1016E0055E09E /* TableLabelViewCell.swift */,
+				4FD67ADC23B1016E0055E09E /* TableLabelViewCell.xib */,
+				4FD67AE023B11ED00055E09E /* ContentTypeEnum.swift */,
+				4FD67AE223B120C60055E09E /* URLSessionViewController+HttpInterceptor.swift */,
+				4FD67AE423B1DEE30055E09E /* SessionManager.swift */,
+				4FEF483723B8A81600E62740 /* MockerViewController.swift */,
+				4FEF483823B8A81600E62740 /* MockerViewController.xib */,
+			);
+			path = Template;
+			sourceTree = "<group>";
+		};
 		607FACC71AFB9204008FA782 = {
 			isa = PBXGroup;
 			children = (
@@ -118,23 +144,14 @@
 		607FACD21AFB9204008FA782 /* Example for HttpInterceptor */ = {
 			isa = PBXGroup;
 			children = (
+				4FEF483423B85BD100E62740 /* Template */,
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
+				4FEF483523B85C4200E62740 /* Enum.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
-				4FC267E023B06F1B00973118 /* WKViewController.swift */,
-				4FC267E123B06F1B00973118 /* WKViewController.xib */,
-				4FC267E623B0743F00973118 /* UIWebViewController.swift */,
-				4FC267E723B0743F00973118 /* UIWebViewController.xib */,
-				4FC267EA23B0B72500973118 /* URLSessionViewController.swift */,
-				4FC267EB23B0B72500973118 /* URLSessionViewController.xib */,
-				4FD67ADB23B1016E0055E09E /* TableLabelViewCell.swift */,
-				4FD67ADC23B1016E0055E09E /* TableLabelViewCell.xib */,
-				4FD67AE023B11ED00055E09E /* ContentTypeEnum.swift */,
-				4FD67AE223B120C60055E09E /* URLSessionViewController+HttpInterceptor.swift */,
-				4FD67AE423B1DEE30055E09E /* SessionManager.swift */,
 			);
 			name = "Example for HttpInterceptor";
 			path = HttpInterceptor;
@@ -284,6 +301,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
+				4FEF483A23B8A81600E62740 /* MockerViewController.xib in Resources */,
 				4FC267ED23B0B72500973118 /* URLSessionViewController.xib in Resources */,
 				4FD67ADE23B1016E0055E09E /* TableLabelViewCell.xib in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
@@ -372,6 +390,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4FEF483923B8A81600E62740 /* MockerViewController.swift in Sources */,
 				4FD67AE323B120C60055E09E /* URLSessionViewController+HttpInterceptor.swift in Sources */,
 				4FC267EC23B0B72500973118 /* URLSessionViewController.swift in Sources */,
 				4FD67AE523B1DEE30055E09E /* SessionManager.swift in Sources */,
@@ -380,6 +399,7 @@
 				4FC267E223B06F1B00973118 /* WKViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 				4FD67ADD23B1016E0055E09E /* TableLabelViewCell.swift in Sources */,
+				4FEF483623B85C4200E62740 /* Enum.swift in Sources */,
 				4FC267E823B0743F00973118 /* UIWebViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
