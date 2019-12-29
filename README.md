@@ -75,7 +75,15 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 1.注册拦截条件
 ```swift
 import BestHttpInterceptor
+
+// Mock URL
 let jsonURL: URL = URL(string: "https://mocker.example.com/json?arg1=1234567890")!
+let pngURL: URL = URL(string: "https://mocker.example.com/png?arg1=1234567890")!
+let jpgURL: URL = URL(string: "https://mocker.example.com/jpg?arg1=1234567890")!
+let gifURL: URL = URL(string: "https://mocker.example.com/gif?arg1=1234567890")!
+let htmlURL: URL = URL(string: "https://mocker.example.com/html?arg1=1234567890")!
+let pdfURL: URL = URL(string: "https://mocker.example.com/pdf?arg1=1234567890")!
+let URLS: [URL] = [jsonURL,pngURL,jpgURL,gifURL,htmlURL,pdfURL]
 
 class MockerTemplateViewController: UIViewController {
     
@@ -88,11 +96,13 @@ class MockerTemplateViewController: UIViewController {
     }
     
     deinit {
+        // 不再使用的时候，记得注销interceptor
         print("MockerTemplateViewController deinit")
         interceptor.unregister()
     }
     
     func registerInterceptor() {
+        // 拦截你想要的URL，根据URLRequest参数，给这个回调返回一个Bool值。
         let condition = HttpIntercepCondition.init(schemeType: .all) { (request) -> Bool in
             if let url = request.url, URLS.contains(url) {
                 return true
@@ -104,6 +114,7 @@ class MockerTemplateViewController: UIViewController {
     }
     
     func doTask() {
+        // 开始一个普通的网络请求，它的返回值，应该是你在Mocker代理里面返回的值。
         URLSession.shared.dataTask(with: jsonURL) { (data, response, error) in
             if let e = error {
                 print("e:\(e)")
@@ -121,6 +132,8 @@ class MockerTemplateViewController: UIViewController {
 2.实现 **HttpMockerDelegate** 代理
 ```swift
 extension MockerTemplateViewController: HttpMockerDelegate {
+    
+    // 根据拦截到的URLRequest，返回本地假数据。
     func httpMocker(request: URLRequest) -> HttpMocker {
         guard let url = request.url else { fatalError() }
         switch url {
@@ -229,6 +242,8 @@ extension WKViewController: HttpInterceptDelegate {
 
 ## Features
 
+- [x] Create mocked data requests based on an URL
+- [x] Supports popular frameworks like `Alamofire`
 - [x] WKWebView, UIWebView, URLSession, URLConnection, all network http(s) requests can be intercepted.
 - [x] Cannot intercept HTTPBody in WKWebView Post request.
 - [x] Custom filter URLRequest.
