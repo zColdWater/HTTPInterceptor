@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0E65825C28B1D5BF86242E62 /* Pods_HttpInterceptor_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 322E53D9AADE127E48C4AEA1 /* Pods_HttpInterceptor_Example.framework */; };
+		4F92024323B98DC300B50634 /* OCTemplateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F92024123B98DC300B50634 /* OCTemplateViewController.m */; };
+		4F92024423B98DC300B50634 /* OCTemplateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F92024223B98DC300B50634 /* OCTemplateViewController.xib */; };
 		4FC267E223B06F1B00973118 /* WKViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC267E023B06F1B00973118 /* WKViewController.swift */; };
 		4FC267E323B06F1B00973118 /* WKViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FC267E123B06F1B00973118 /* WKViewController.xib */; };
 		4FC267E523B070CA00973118 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FC267E423B070CA00973118 /* WebKit.framework */; };
@@ -57,6 +59,10 @@
 		05321371A5BF0CB58567F7A2 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		322E53D9AADE127E48C4AEA1 /* Pods_HttpInterceptor_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HttpInterceptor_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		496F35E29D24D27075F826D2 /* Pods-HttpInterceptor_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HttpInterceptor_Tests.release.xcconfig"; path = "Target Support Files/Pods-HttpInterceptor_Tests/Pods-HttpInterceptor_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		4F92023F23B98DC300B50634 /* HttpInterceptor_Example-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HttpInterceptor_Example-Bridging-Header.h"; sourceTree = "<group>"; };
+		4F92024023B98DC300B50634 /* OCTemplateViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCTemplateViewController.h; sourceTree = "<group>"; };
+		4F92024123B98DC300B50634 /* OCTemplateViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCTemplateViewController.m; sourceTree = "<group>"; };
+		4F92024223B98DC300B50634 /* OCTemplateViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OCTemplateViewController.xib; sourceTree = "<group>"; };
 		4FC267E023B06F1B00973118 /* WKViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKViewController.swift; sourceTree = "<group>"; };
 		4FC267E123B06F1B00973118 /* WKViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WKViewController.xib; sourceTree = "<group>"; };
 		4FC267E423B070CA00973118 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
@@ -187,6 +193,10 @@
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
+				4F92024023B98DC300B50634 /* OCTemplateViewController.h */,
+				4F92024123B98DC300B50634 /* OCTemplateViewController.m */,
+				4F92024223B98DC300B50634 /* OCTemplateViewController.xib */,
+				4F92023F23B98DC300B50634 /* HttpInterceptor_Example-Bridging-Header.h */,
 			);
 			name = "Example for HttpInterceptor";
 			path = HttpInterceptor;
@@ -301,7 +311,7 @@
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
-						LastSwiftMigration = 0900;
+						LastSwiftMigration = 1110;
 					};
 					607FACE41AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
@@ -345,6 +355,7 @@
 				4FC267ED23B0B72500973118 /* URLSessionViewController.xib in Resources */,
 				4FD67ADE23B1016E0055E09E /* TableLabelViewCell.xib in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
+				4F92024423B98DC300B50634 /* OCTemplateViewController.xib in Resources */,
 				4FC267E323B06F1B00973118 /* WKViewController.xib in Resources */,
 				4FEF484823B8E09D00E62740 /* mock_gif.gif in Resources */,
 				4FEF484323B8DD2900E62740 /* MockerTemplateViewController.xib in Resources */,
@@ -444,6 +455,7 @@
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 				4FD67ADD23B1016E0055E09E /* TableLabelViewCell.swift in Sources */,
 				4FEF483623B85C4200E62740 /* Enum.swift in Sources */,
+				4F92024323B98DC300B50634 /* OCTemplateViewController.m in Sources */,
 				4FC267E823B0743F00973118 /* UIWebViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -590,12 +602,15 @@
 			baseConfigurationReference = 93AB3486FA1095C28E195DE2 /* Pods-HttpInterceptor_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = HttpInterceptor/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "HttpInterceptor/HttpInterceptor_Example-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 			};
@@ -606,12 +621,14 @@
 			baseConfigurationReference = 7B541CF18C52B1F37F15BC9D /* Pods-HttpInterceptor_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = HttpInterceptor/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "HttpInterceptor/HttpInterceptor_Example-Bridging-Header.h";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 			};
