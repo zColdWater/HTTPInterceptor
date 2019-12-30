@@ -18,7 +18,7 @@ If it helps you, plesae give the project a little stars ✨ is the best support 
 If you have any questions, please submit issue for me. Your issues are the best feedback for me.
 
 ## About HTTPInterceptor
-新:  我为HTTPInterceptor新增了 Mock Data 的功能，API 非常简单清晰，使用非常方便。
+新:  我为HTTPInterceptor新增了 Mock Data 的功能，API 非常简单清晰，使用非常方便。 支持 Swift，Objective 调用接口。
 I've added Mock Data functionality to Interceptor, and the API is simple and clear. It's very easy to use.
 
 HTTPInterceptor 是一个iOS网络请求拦截器，它可以拦截基于`URLSession`和`NSURLConnection`发出的HTTP(s)请求。
@@ -240,6 +240,7 @@ extension WKViewController: HttpInterceptDelegate {
 }
 ```
 
+
 ## Features
 
 - [x] Create mocked data requests based on an URL
@@ -249,7 +250,7 @@ extension WKViewController: HttpInterceptDelegate {
 - [x] Custom filter URLRequest.
 - [x] Can intercept and replace URLRequest, URLResponse, Data.
 
-## Usage
+## Usage Swift
 
 
 ### 一，Mock Data (Mock数据)
@@ -340,6 +341,99 @@ extension SomeClass: HttpInterceptDelegate {
     func httpRequest(request: URLRequest, didFinishCollecting metrics: URLSessionTaskMetrics) {
     }
 }
+```
+
+## Usage Objective-C
+
+1..h文件
+```ObjectiveC
+#import <UIKit/UIKit.h>
+@import BestHttpInterceptor;
+
+NS_ASSUME_NONNULL_BEGIN
+
+@interface OCTemplateViewController : UIViewController <HttpMockerDelegate,HttpInterceptDelegate>
+
+@end
+
+NS_ASSUME_NONNULL_END
+
+```
+2..m文件
+```ObjectiveC
+#import "OCTemplateViewController.h"
+
+@interface OCTemplateViewController ()
+
+@property(nonatomic,strong) HttpInterceptor *interceptor;
+
+@end
+
+@implementation OCTemplateViewController
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    // 这里只是做OC的调用，来检查 OC 是否可以编译通过。
+    // 实际上，如果Interceptor 和 Mocker 同时拦截了一个Reuqest，只会回调给Mocker的代理。
+    [self registerMocker];
+    [self registerInterceptor];
+}
+
+
+- (void)dealloc
+{
+    [self.interceptor unregister];
+}
+
+
+// MARK: -- Interceptor
+- (void)registerInterceptor {
+    HttpIntercepCondition *condition = [[HttpIntercepCondition alloc] initWithSchemeType:InterceptSchemeTypeAll condition:^BOOL(NSURLRequest * request) {
+        return YES;
+    }];
+    self.interceptor = [[HttpInterceptor alloc] initWithCondition:condition interceptorDelegate:self];
+    [self.interceptor register];
+}
+
+- (NSURLRequest *)httpRequestWithRequest:(NSURLRequest *)request {
+    NSLog(@"httpRequestWithRequest: request:");
+    return request;
+}
+
+- (NSURLResponse *)httpRequestWithResponse:(NSURLResponse *)response {
+    NSLog(@"httpRequestWithResponse: response:");
+    return response;
+}
+
+- (NSData *)httpRequestWithRequest:(NSURLRequest *)request data:(NSData *)data {
+    NSLog(@"httpRequestWithRequest: data:");
+    return data;
+}
+
+- (void)httpRequestWithRequest:(NSURLRequest *)request didCompleteWithError:(NSError *)error {
+    NSLog(@"httpRequestWithRequest: didCompleteWithError:");
+}
+
+- (void)httpRequestWithRequest:(NSURLRequest *)request didFinishCollecting:(NSURLSessionTaskMetrics *)metrics {
+    NSLog(@"httpRequestWithRequest: didFinishCollecting:");
+}
+
+// MARK: -- Mocker
+- (void)registerMocker {
+    HttpIntercepCondition *condition = [[HttpIntercepCondition alloc] initWithSchemeType:InterceptSchemeTypeAll condition:^BOOL(NSURLRequest * request) {
+        return YES;
+    }];
+    self.interceptor = [[HttpInterceptor alloc] initWithCondition:condition mockerDelegate:self];
+    [self.interceptor register];
+}
+
+- (HttpMocker *)httpMockerWithRequest:(NSURLRequest *)request {
+    return [[HttpMocker alloc] initWithDataType:HttpMockerDataTypeJson mockData:[NSData new] statusCode:200 httpVer:HttpMockerHttpTypeHttp1_1 headerFields:NULL];
+}
+
+@end
+
 ```
 
 
