@@ -7,6 +7,11 @@
 [![Platform](https://img.shields.io/badge/platform-ios-lightgrey)](https://cocoapods.org/pods/HttpInterceptor)
 
 
+如果使用上的任何问题请各位大佬提issue，或者加我微信哦。
+
+![Wechat](http://47.99.237.180:2088/files/3151de21605e2b8e550dd859ea87e073)
+
+
 项目有在调用苹果私有api，为了拦截WKWebView发出去的网络请求，但是方法名已经使用Base64进行了编码，为了防止苹果静态扫描和检查，所以存在一定架风险，请大家合理利用，最安全还是在Debug下，开发中使用。   
 
 The project is calling apple private api, in order to intercept the WKWebView sent to the network request, but the api signature has been encoded in Base64, in order to prevent apple static scanning and inspection, so there is a certain risk, please reasonable use, the most secure or in the Debug, the development of the use. 🙏🙏
