@@ -453,7 +453,7 @@ it, simply add the following line to your Podfile:
 
 ```ruby
 
-pod 'BestHttpInterceptor'
+pod 'BestHttpInterceptor', '1.1.0'
 
 ```
 
@@ -461,7 +461,7 @@ if you want use it with Debug
 
 ```ruby
 
-pod 'BestHttpInterceptor',:configurations => ['Debug'] 
+pod 'BestHttpInterceptor', '1.1.0', :configurations => ['Debug'] 
 
 ```
 
